@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "195079821824",
-    "project_id": "ecommerce-62ef6",
-    "storage_bucket": "ecommerce-62ef6.firebasestorage.app"
+    "project_number": "788623339396",
+    "project_id": "fspu-6a163",
+    "storage_bucket": "fspu-6a163.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:195079821824:android:3ad9c9893884d4594356e5",
+        "mobilesdk_app_id": "1:788623339396:android:e26121c0dcc0d8d12677d1",
         "android_client_info": {
-          "package_name": "com.example.store313"
+          "package_name": "com.example.fspu"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCph557BGmc4Rgf74ofxStDUyigj7oxzlo"
+          "current_key": "AIzaSyB7_q-zSG5E4weoSdXejee5xDZi4HKv13k"
         }
       ],
       "services": {

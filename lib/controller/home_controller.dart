@@ -1,6 +1,7 @@
  //في هذه الصفحة نحن نفحص الايميل فقط 
 import 'dart:async';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fspu/core/constantk/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -56,6 +57,11 @@ update();
  var currenPage=0.obs;
  @override
   void onInit() {
+    FirebaseMessaging.instance.getToken().then((value){
+      print("111111111111111111token00000000000000000token");
+      print(value);
+      String? token=value;
+    });
     if(myservices.sharedPreferences.getString("them")=="dark"){
       positive=true;
     }else{

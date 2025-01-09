@@ -1,4 +1,4 @@
-package com.example.store313
+package com.example.fspu
 
 import io.flutter.embedding.android.FlutterActivity
 
