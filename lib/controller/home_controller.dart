@@ -63,10 +63,10 @@ update();
     }
     // TODO: implement onInit
     super.onInit();
-   startAutoSlide();
+     startAutoSlide();
      getSlider();
- GetCount() ;
-    print("========== GetCount==========");
+     GetCount() ;
+      print("========== GetCount==========");
   }
 
 
