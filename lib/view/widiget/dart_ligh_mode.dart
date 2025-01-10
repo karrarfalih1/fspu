@@ -4,9 +4,11 @@ import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:fspu/controller/home_controller.dart';
+import 'package:fspu/controller/home/home_controller.dart';
 
 class DartLighMode extends GetView<HomeControllerImp> {
+  const DartLighMode({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeControllerImp>(
@@ -30,14 +32,14 @@ class DartLighMode extends GetView<HomeControllerImp> {
               ),
               customStyleBuilder: (context, local, global) {
            if(global.position<=0){
-            return ToggleStyle(
+            return const ToggleStyle(
               indicatorColor: Colors.white,
               backgroundColor: Colors.black);
            }     return ToggleStyle(
                   indicatorColor: Color.lerp(
                       Colors.black, Colors.white, 1.0 - global.position),
                   backgroundGradient: LinearGradient(
-                    colors: [Colors.white, Colors.black],
+                    colors: const [Colors.white, Colors.black],
                     stops: [
                       max(0.0, global.position - 0.5) * 2.0,
                       global.position,

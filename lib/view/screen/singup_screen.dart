@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fspu/controller/screen_singup_controller.dart';
 import 'package:fspu/core/constantk/color.dart';
-import 'package:fspu/core/localizationk/changelocal.dart';
 
 class SingupScreen extends StatelessWidget{
+  const SingupScreen({super.key});
+
   
 
   @override
@@ -15,7 +16,7 @@ class SingupScreen extends StatelessWidget{
     appBar: AppBar(backgroundColor: Colors.grey,
       toolbarHeight:1),
   bottomNavigationBar:  Container(
-      margin: EdgeInsets.symmetric(vertical: 20,horizontal: 10),
+      margin: const EdgeInsets.symmetric(vertical: 20,horizontal: 10),
       width: double.infinity,
       height: 50,
       child: Row(
@@ -25,7 +26,7 @@ class SingupScreen extends StatelessWidget{
                 controller.stepCancel();
               },
                child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                
                    color: Colors.grey,
@@ -33,7 +34,7 @@ class SingupScreen extends StatelessWidget{
                 ),
                
                 width: double.infinity,
-                child: Center(child: Text("رجوع",style: TextStyle(fontSize: 20,color: Colors.white),),),
+                child: const Center(child: Text("رجوع",style: TextStyle(fontSize: 20,color: Colors.white),),),
                  
                ),
              )),
@@ -43,7 +44,7 @@ class SingupScreen extends StatelessWidget{
                 controller.stepContinue();
               },
                child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                
                    color: AppColor.fspucolor,
@@ -51,7 +52,7 @@ class SingupScreen extends StatelessWidget{
                 ),
                
                 width: double.infinity,
-                child: Center(child: Text("تقدم",style: TextStyle(fontSize: 20,color: Colors.white),),),
+                child: const Center(child: Text("تقدم",style: TextStyle(fontSize: 20,color: Colors.white),),),
                  
                ),
              )),
@@ -67,20 +68,20 @@ Theme(
   data: Theme.of(context).copyWith(
    visualDensity: VisualDensity.compact,
    
-    colorScheme:ColorScheme.light(primary: AppColor.fspucolor),
+    colorScheme:const ColorScheme.light(primary: AppColor.fspucolor),
   ),
   child: Stepper(
     
     type: StepperType.horizontal,
     steps: controller.Stepsk,
-    currentStep: controller.currentStep!,
+    currentStep: controller.currentStep,
    
     onStepCancel: (){
       controller.stepCancel();
     },
      controlsBuilder: (BuildContext context, ControlsDetails details) {
         // إرجاع ويدجيت فارغ لإزالة الأزرار
-        return SizedBox.shrink();
+        return const SizedBox.shrink();
       },
     ),
 ),),)

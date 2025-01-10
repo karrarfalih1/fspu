@@ -2,7 +2,6 @@
 import 'dart:async';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:fspu/core/constantk/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fspu/core/classk/statusRequest.dart';
@@ -48,7 +47,6 @@ update();
 
 }
 
-//////////////
 
 
 
@@ -71,7 +69,6 @@ update();
     super.onInit();
      startAutoSlide();
      getSlider();
-     GetCount() ;
       print("========== GetCount==========");
   }
 
@@ -81,7 +78,7 @@ update();
     Get.toNamed(Approute.activity);
   }
   void startAutoSlide(){
-    Timer.periodic(Duration(seconds: 10), (timer){
+    Timer.periodic(const Duration(seconds: 10), (timer){
       if(currenPage.value<2){
         currenPage.value++;
       }else{
@@ -90,7 +87,7 @@ update();
       pageController.animateToPage(
         currenPage.value,
 
-       duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+       duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
 
     });
   }
@@ -113,22 +110,6 @@ if(StatusRequest.success==statusRequest){
    print(data);
   }else{
     statusRequest=StatusRequest.failure; }
-}
-update();
-  }
-  GetCount() async{
-    statusRequest=StatusRequest.loading;
-    var response=await sliderData.getcount();
-    statusRequest=handleingData(response);
-if(StatusRequest.success==statusRequest){
-  if(response['status']=='success'){
-Number_of_males=response['male_count'];
-Number_of_females=response['female_count'];
-total=Number_of_females+Number_of_males;
-  }else{
-    statusRequest=StatusRequest.failure;
-     }
-   
 }
 update();
   }

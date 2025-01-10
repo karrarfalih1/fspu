@@ -23,7 +23,7 @@ class VerifyCodeSignUp extends StatelessWidget{
   child: GetBuilder<VerifyCodeSignUp_ControllerImp>(builder:(controller)=>
   
   HandlingDataView(statusRequest: controller.statusRequest, widget: 
-  Container(
+  SizedBox(
      //color: Colors.white,
     //color: Colors.red,
    // padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 30),
@@ -31,13 +31,13 @@ class VerifyCodeSignUp extends StatelessWidget{
     child: ListView(
       children:[     const SizedBox(height: 40,),
       
-       Center(child: CustomLogoAuth()),
+       const Center(child: CustomLogoAuth()),
         const SizedBox(height: 10,),
       
       const CustomTextTitleAuth(title:"توثيق الحساب",),
        const SizedBox(height: 10,),
        const CustomTextSubTitleAuth(subtitle: "سوف يصلك رقم سري  على هذا البريد\n",),
-       Center(child: Text("${controllerSignup.email_controller.text}"))
+       Center(child: Text(controllerSignup.email_controller.text))
        ,const SizedBox(height: 35,),
       
     Directionality(

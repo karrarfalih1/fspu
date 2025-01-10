@@ -1,16 +1,17 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:fspu/controller/university/university_controller.dart';
 import 'package:get/get.dart';
-import 'package:fspu/controller/home_controller.dart';
+import 'package:fspu/controller/home/home_controller.dart';
 
 class MailFamelCostom extends GetView<HomeControllerImp> {
  
   const MailFamelCostom({super.key, });
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomeControllerImp>(builder: (controller)=>
+    return GetBuilder<GetUniversityControllerImp>(builder: (controller)=>
     
-     Container(
+     SizedBox(
                                   height: 82,
                                   child: Row(
                                     children: [
@@ -97,7 +98,7 @@ class MailFamelCostom extends GetView<HomeControllerImp> {
                                         ],
                                       ),
                                       const Spacer(),
-                                      Container(
+                                      SizedBox(
                                         height: 80,
                                         width: 80,
                                         child: PieChart(PieChartData(sections: [

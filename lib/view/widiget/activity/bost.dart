@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:fspu/controller/activity_controller.dart';
@@ -8,7 +7,7 @@ import 'package:fspu/data/model/activitymodel.dart';
 
 class BostActivity extends GetView<ActivityControllerImp> {
   ActivityModel activityModel;
-  BostActivity({Key? key,required this.activityModel});
+  BostActivity({super.key,required this.activityModel});
   @override
   Widget build(BuildContext context) {
     DateTime parsedDate=DateTime.parse(activityModel.activityDate.toString());
@@ -50,7 +49,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
                  
                         ListTile(
                       title: const Text("التاريخ",style: TextStyle(fontWeight: FontWeight.bold),),
-                      subtitle: Row(children:[ Text("${datek}"),Container(
+                      subtitle: Row(children:[ Text(datek),Container(
                         width: 70,
                         height: 20,
                         
@@ -62,7 +61,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
                         margin: const EdgeInsets.only(right: 5),
                       //  padding: EdgeInsets.symmetric(horizontal: 5)
                      
-                      child: Center(child: Text("${timek}",style: const TextStyle(fontFamily: "snas",color: Colors.black),)),
+                      child: Center(child: Text(timek,style: const TextStyle(fontFamily: "snas",color: Colors.black),)),
                         )]),
                       leading: const Icon(Icons.date_range,
                       color: AppColor.fspucolor,
@@ -85,7 +84,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
                       leading: const Icon(Icons.location_on,
                       color: AppColor.fspucolor,
                      ),),
-                     Container(
+                     SizedBox(
                       height: 50,
                     //  color: Colors.red,
                       width: double.infinity,

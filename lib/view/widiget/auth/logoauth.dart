@@ -9,7 +9,7 @@ class CustomLogoAuth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: 5),
+      padding: const EdgeInsets.only(bottom: 5),
       width: 100,
       height: 100,
       decoration: BoxDecoration(

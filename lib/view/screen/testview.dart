@@ -11,6 +11,8 @@ Future<List<String>> getData(filter) async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,12 +27,14 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final dropDownKey = GlobalKey<DropdownSearchState>();
 
+  MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('examples mode')),
+      appBar: AppBar(title: const Text('examples mode')),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         children: [
           Row(
             children: [
@@ -40,17 +44,17 @@ class MyHomePage extends StatelessWidget {
                   selectedItem: "Menu",
                   items: (filter, infiniteScrollProps) =>
                       ["Menu", "Dialog", "Modal", "BottomSheet"],
-                  decoratorProps: DropDownDecoratorProps(
+                  decoratorProps: const DropDownDecoratorProps(
                     decoration: InputDecoration(
                       labelText: 'Examples for: ',
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  popupProps: PopupProps.menu(
+                  popupProps: const PopupProps.menu(
                       fit: FlexFit.loose, constraints: BoxConstraints()),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(right: 16)),
+              const Padding(padding: EdgeInsets.only(right: 16)),
               FilledButton(
                 onPressed: () {
                   switch (dropDownKey.currentState?.getSelectedItem) {
@@ -58,36 +62,36 @@ class MyHomePage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Text("")));
+                              builder: (context) => const Text("")));
                       break;
                     case 'Modal':
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Text("")));
+                              builder: (context) => const Text("")));
                       break;
                     case 'BottomSheet':
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  Text("")));
+                              builder: (context) =>  const Text("")));
                       break;
                     case 'Dialog':
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Text("")));
+                              builder: (context) => const Text("")));
                       break;
                   }
                 },
-                child: Text("Go"),
+                child: const Text("Go"),
               )
             ],
           ),
-          Padding(padding: EdgeInsets.all(8)),
+          const Padding(padding: EdgeInsets.all(8)),
           RichText(
-            text: TextSpan(
-              style: const TextStyle(fontSize: 14.0, color: Colors.black),
+            text: const TextSpan(
+              style: TextStyle(fontSize: 14.0, color: Colors.black),
               children: [
                 TextSpan(text: 'we used '),
                 TextSpan(
@@ -103,8 +107,8 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
           ),
-          Padding(padding: EdgeInsets.only(top: 20)),
-          Text(
+          const Padding(padding: EdgeInsets.only(top: 20)),
+          const Text(
             'DropdownSearch Anatomy',
             style: TextStyle(
                 fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),

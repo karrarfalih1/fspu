@@ -7,7 +7,7 @@ class GetUniversity{
 
   GetUniversity(this.crud);
 
-  getcount()async{
+  getcountun()async{
     var response=await crud.postData(Applink.university, {});
 
   return response.fold((l)=>l,(r)=>r);
@@ -16,6 +16,13 @@ class GetUniversity{
  plusuniversity( cat )async{
     var response=await crud.postData(Applink.universityplus ,{
       "universityid":cat
+    });
+
+  return response.fold((l)=>l,(r)=>r);
+  }
+
+    getcount()async{
+    var response=await crud.postData(Applink.getcount, {
     });
 
   return response.fold((l)=>l,(r)=>r);

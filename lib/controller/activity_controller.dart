@@ -30,7 +30,8 @@ class ActivityControllerImp extends ActivityController{
   
 
 
-    getActivityData() async{
+    @override
+  getActivityData() async{
     //نعطي قيمة ابتدائية وهي اللودنغ
     statusRequest=StatusRequest.loading;
     update();

@@ -2,7 +2,6 @@
 import 'package:get/get.dart';
 import 'package:fspu/core/constantk/routesname.dart';
 import 'package:fspu/core/middleware/mymiddleware.dart';
-import 'package:fspu/test_view.dart';
 import 'package:fspu/view/screen/activity/activity.dart';
 import 'package:fspu/view/screen/auth/forget/forgetpassword.dart';
 import 'package:fspu/view/screen/auth/login.dart';
@@ -13,10 +12,8 @@ import 'package:fspu/view/screen/auth/success_signup.dart';
 import 'package:fspu/view/screen/auth/forget/verifycode.dart';
 import 'package:fspu/view/screen/auth/verifycodesignup.dart';
 import 'package:fspu/view/screen/home.dart';
-import 'package:fspu/view/screen/language.dart';
 import 'package:fspu/view/screen/onboarding.dart';
 import 'package:fspu/view/screen/singup_screen.dart';
-import 'package:fspu/view/screen/universityy/choseunivesity.dart';
 
 
 List<GetPage<dynamic>>? routes=[
@@ -40,9 +37,9 @@ List<GetPage<dynamic>>? routes=[
  //home;
  GetPage(name: Approute.homepage, page: ()=>const homepage()),
  
- GetPage(name: Approute.screenSingup, page: ()=> SingupScreen()),
+ GetPage(name: Approute.screenSingup, page: ()=> const SingupScreen()),
  
- GetPage(name: Approute.activity, page: ()=> Activity()),
+ GetPage(name: Approute.activity, page: ()=> const Activity()),
 
 
 

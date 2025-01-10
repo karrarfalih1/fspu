@@ -1,13 +1,12 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fspu/view/widiget/home/cart_home.dart';
 import 'package:fspu/view/widiget/home/drower_costam.dart';
 import 'package:get/get.dart';
 import 'package:fspu/controller/activity_controller.dart';
-import 'package:fspu/controller/home_controller.dart';
+import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/controller/university/university_controller.dart';
 import 'package:fspu/core/classk/handlingdataview.dart';
-import 'package:fspu/core/constantk/color.dart';
 import 'package:fspu/core/servicesk/services.dart';
 import 'package:fspu/view/widiget/appbar.dart';
 import 'package:fspu/view/widiget/home/card_home.dart';
@@ -30,7 +29,7 @@ class homepage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar:customAppBar(),
-          drawer: Drawer(
+          drawer: const Drawer(
 
             child:DrowerCostam()
                ),
@@ -46,25 +45,7 @@ class homepage extends StatelessWidget {
                           height: 10,
                         ),
                         const SilderImageHome(),
-                  
-                        Container(
-                          height: 120,
-                          child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: 5,
-                              itemBuilder: (context, index) {
-                                return Container(
-                                    decoration: BoxDecoration(
-                                        color: AppColor.fspucolor,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 7, vertical: 10),
-                                    height: 120,
-                                    width: 80,
-                                    child: const Icon(Icons.handshake));
-                              }),
-                        ),
+                  const CartHome(),
                      const CardHome(title: 'التبليغات', subtitle: 'على الاعضاء التوجه  للمقر الرئيسي', icons: Icons.message, trailtext: '2025-1-2',),
                      GetBuilder<ActivityControllerImp>(builder:(controllerA)=>
                      HandlingDataView(statusRequest: controllerA.statusRequest, widget: CardHome(ontap: controller.gotoactivity, 
@@ -94,7 +75,7 @@ class homepage extends StatelessWidget {
                              
                                 Expanded(
                                   flex: 3,
-                                  child: UnversityCostom(title: '',)
+                                  child: UnversityCostom()
                                 ),
                                 Expanded(
                                     child: MailFamelCostom())

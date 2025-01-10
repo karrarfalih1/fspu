@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -368,7 +368,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   final opacity =
                       ((global.position - local.position).abs() - 0.5)
                           .clamp(0.0, 1.0);
-                  return VerticalDivider(
+                  return const VerticalDivider(
                       indent: 10.0,
                       endIndent: 10.0,
                       color: Colors.white38);

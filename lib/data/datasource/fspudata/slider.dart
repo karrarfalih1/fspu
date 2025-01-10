@@ -12,10 +12,5 @@ class SliderData{
 
   return response.fold((l)=>l,(r)=>r);
   }
-  getcount()async{
-    var response=await crud.postData(Applink.getcount, {
-    });
 
-  return response.fold((l)=>l,(r)=>r);
-  }
 }

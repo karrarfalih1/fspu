@@ -25,7 +25,7 @@ class SignUp extends StatelessWidget{
     return   Container(
   child: GetBuilder<SignUp_ControllerImp>(builder: (controller)=>
 HandlingDataView(statusRequest: controller.statusRequest!, widget: 
-Container(
+SizedBox(
   // color: Colors.white,
   //color: Colors.red,
  // padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 30),
@@ -36,10 +36,10 @@ Container(
       children:[
         const SizedBox(height: 10,),
       
-       Center(child: CustomLogoAuth()),
+       const Center(child: CustomLogoAuth()),
         const SizedBox(height: 10,),
         const CustomTextSubTitleAuth(subtitle: 'اهلا وسهلا بك في الاتحاد الطلابي  والشعبي ',),
-        SizedBox(height: 10,),
+        const SizedBox(height: 10,),
         TextSignUpAndSignIn(
     title2: "هل لديك حساب بالفعل؟",
     title: "تسجيل الدخول ",onTap: (){
@@ -109,7 +109,7 @@ Container(
           iconss:Icons.event
         //   mycontroller: ,
         ),
-         SizedBox(height:10),
+         const SizedBox(height:10),
       
       //    SizedBox(height:30),
       DropdownSearch<String>(
@@ -117,8 +117,8 @@ Container(
   items: (filter, infiniteScrollProps) => ["انثى", "ذكر"],
    decoratorProps: DropDownDecoratorProps(
     decoration: InputDecoration(
-      label: Container(margin: EdgeInsets.symmetric(horizontal: 20),
-        child: Text('الجنس'),),
+      label: Container(margin: const EdgeInsets.symmetric(horizontal: 20),
+        child: const Text('الجنس'),),
     //  labelText: 'الجنس',
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
@@ -135,7 +135,7 @@ Container(
     controller.selectedGender= index.toString();
     print(controller.selectedGender);
   },
-  popupProps: PopupProps.menu(
+  popupProps: const PopupProps.menu(
     menuProps: MenuProps(
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(30),
@@ -150,7 +150,7 @@ Container(
 
       const SizedBox(height: 30,),
     
-    SizedBox(height: 50,)
+    const SizedBox(height: 50,)
       ],
     
     ),

@@ -3,7 +3,6 @@
 
 
 
-import 'package:fspu/view/screen/activity/activity.dart';
 
 class Applink {                          
 static const String server="https://karar.io/fspuphp";

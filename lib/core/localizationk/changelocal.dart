@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:fspu/controller/home_controller.dart';
+import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/core/constantk/apptheme.dart';
 import 'package:fspu/core/servicesk/services.dart';
 
@@ -29,7 +29,7 @@ Get.changeTheme(appTheme);
 update();
 }
 changeLang(){
-  Locale locale=Locale('ar');
+  Locale locale=const Locale('ar');
   myServices.sharedPreferences.setString("lang", "ar");
 
  Get.updateLocale(locale);

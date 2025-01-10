@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CardHome extends StatelessWidget {
   final String title;
@@ -7,7 +6,7 @@ class CardHome extends StatelessWidget {
     final  IconData icons;
     final String trailtext;
   final void Function()? ontap;
-  const CardHome({Key? key, required this.title, this.ontap, required this.subtitle, required this.icons, required this.trailtext});
+  const CardHome({super.key, required this.title, this.ontap, required this.subtitle, required this.icons, required this.trailtext});
   @override
   Widget build(BuildContext context) {
     return    InkWell(
@@ -19,15 +18,15 @@ class CardHome extends StatelessWidget {
                             child:  Card(
                               child: ListTile(
       
-                                trailing:Text("${trailtext}"),
+                                trailing:Text(trailtext),
                                 subtitle: Text(
-                                  "${subtitle}",
+                                  subtitle,
                                   style:const TextStyle(
                                       fontSize: 13,),
                                   textDirection: TextDirection.rtl,
                                 ),
                                 title: Text(
-                                 "${title}",
+                                 title,
                                   style:const TextStyle(
                                       fontSize: 20,),
                                   textDirection: TextDirection.rtl,

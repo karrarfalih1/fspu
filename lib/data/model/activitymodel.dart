@@ -30,15 +30,15 @@ class ActivityModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['activity_id'] = this.activityId;
-    data['activity_title'] = this.activityTitle;
-    data['activity_disc'] = this.activityDisc;
-    data['activity_created'] = this.activityCreated;
-    data['activity_date'] = this.activityDate;
-    data['activity_location'] = this.activityLocation;
-    data['activity_code'] = this.activityCode;
-    data['activity_shere'] = this.activityShere;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['activity_id'] = activityId;
+    data['activity_title'] = activityTitle;
+    data['activity_disc'] = activityDisc;
+    data['activity_created'] = activityCreated;
+    data['activity_date'] = activityDate;
+    data['activity_location'] = activityLocation;
+    data['activity_code'] = activityCode;
+    data['activity_shere'] = activityShere;
     return data;
   }
 }

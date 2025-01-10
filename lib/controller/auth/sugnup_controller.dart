@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:fspu/core/classk/statusRequest.dart';
 import 'package:fspu/core/constantk/routesname.dart';
 import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
-import 'package:fspu/data/datasource/fspudata/university.dart';
 import 'package:fspu/data/datasource/remote/auth/signup.dart';
 
 abstract class SignUp_Controller extends  GetxController{

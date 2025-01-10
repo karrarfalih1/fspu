@@ -23,16 +23,16 @@ int currentStep=0;
     Step(
       state: currentStep >0?StepState.complete:controllerSignup.stateform==0?StepState.error: StepState.indexed,
       isActive: currentStep >= 0,
-      title: Text("المعلومات",style: TextStyle(fontSize: 12),), content: Container(
+      title: const Text("المعلومات",style: TextStyle(fontSize: 12),), content: const SizedBox(
        width: double.infinity,
        height: 550,
         child:SignUp() ,) ),
      Step(
        state: currentStep >1?StepState.complete:StepState.indexed,
        isActive: currentStep >= 1,
-      title: Text(
+      title: const Text(
       
-      "الجامعة",style: TextStyle(fontSize: 12)), content: Container(
+      "الجامعة",style: TextStyle(fontSize: 12)), content: const SizedBox(
     width: double.infinity,
     height: 600,
     child: Choseunivesity(),
@@ -41,7 +41,7 @@ int currentStep=0;
          state: currentStep >2?StepState.complete:StepState.indexed,
         
          isActive: currentStep >= 2,
-        title: Text("التوثيق",style: TextStyle(fontSize: 12)), content: Container(
+        title: const Text("التوثيق",style: TextStyle(fontSize: 12)), content: const SizedBox(
            width: double.infinity,
     height: 600,
           child: VerifyCodeSignUp(),
@@ -67,7 +67,7 @@ stepContinue(){
       middleText: "يجب ان تحدد الجنس"
     );
       }else{
- currentStep =currentStep!+1;
+ currentStep =currentStep+1;
       }}else{ 
  update();  
     }
@@ -82,11 +82,11 @@ stepContinue(){
     controllerSignup.signup();
     controllerSignup.plus();
     
- currentStep =currentStep!+1;
+ currentStep =currentStep+1;
     }
    
   }else{
- currentStep =currentStep!+1;
+ currentStep =currentStep+1;
   }
   update();
   }
@@ -94,7 +94,7 @@ stepContinue(){
 }
 stepCancel(){
   currentStep==0?null:
- currentStep =currentStep!-1;
+ currentStep =currentStep-1;
 
   update();
 }

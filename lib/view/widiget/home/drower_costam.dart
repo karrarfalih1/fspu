@@ -1,18 +1,23 @@
 
 import 'package:flutter/material.dart';
-import 'package:fspu/controller/home_controller.dart';
+import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/core/constantk/color.dart';
 import 'package:fspu/core/constantk/imagesasset.dart';
+import 'package:fspu/core/constantk/routesname.dart';
 import 'package:fspu/core/servicesk/services.dart';
 import 'package:fspu/view/widiget/dart_ligh_mode.dart';
 import 'package:get/get.dart';
 
 class DrowerCostam extends GetView<HomeControllerImp>{
-  get userid => null;
+  const DrowerCostam({super.key});
+
+ 
 
   @override
   Widget build(BuildContext context) {
+    
     MyServices  myServices=Get.find();
+   String? gender =myServices.sharedPreferences.getString("gender").toString();
            return Column(
               children: [
                
@@ -59,8 +64,7 @@ class DrowerCostam extends GetView<HomeControllerImp>{
                           radius: 38,
                           backgroundColor:Colors.white,
                           backgroundImage: AssetImage(
-                            userid=="0"?
-                            
+                            gender=="0"?
                             AppImagesasset.wimanuser:AppImagesasset.manuser
                             ),
                         ),
@@ -86,11 +90,34 @@ class DrowerCostam extends GetView<HomeControllerImp>{
              ))
            ),
 const SizedBox(height: 20,),
-  Row(children: [
+  const Row(children: [
     SizedBox(width: 10,),
     Text("الوضع :",style: TextStyle(fontSize: 20),),
   SizedBox(width: 10,),
   DartLighMode()],)     
+,const ListTile(title: Text("المطورين"),
+leading: Icon(Icons.info,),
+),
+InkWell(
+  onTap: () {
+     Get.defaultDialog(
+    title: "تنبيه",
+    middleText: "هل انت متاكد من انك تريد تسجيل الخروج من هذا التطبيق",
+    actions: [
+      ElevatedButton(onPressed:(){
+       myservices.sharedPreferences.clear();
+       Get.offAllNamed(Approute.login);
+      }, child:const Text("نعم")),
+        ElevatedButton(onPressed:(){
+          Get.back();
+        }, child:const Text("لا"))
+    ]
+  );
+  },
+  child: const ListTile(title: Text("تسجيل الخروج"),
+  leading: Icon(Icons.logout,color: Colors.red,),
+  ),
+),
 
               ],
             );

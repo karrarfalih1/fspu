@@ -41,7 +41,7 @@ body: WillPopScope(
     child: ListView(
       children:[
          const SizedBox(height: 15,),
-         Center(child: const CustomLogoAuth()),
+         const Center(child: CustomLogoAuth()),
       const SizedBox(height: 15,),
       const CustomTextTitleAuth(title:"welcome",),
        const SizedBox(height: 10,),

@@ -1,9 +1,6 @@
 
   import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/get_instance.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:fspu/controller/auth/sugnup_controller.dart';
 import 'package:fspu/controller/university/university_controller.dart';
 import 'package:fspu/core/constantk/color.dart';
@@ -13,7 +10,7 @@ void showCustomBottomSheet(BuildContext context) {
   SignUp_ControllerImp controllers =Get.put(SignUp_ControllerImp());
     showModalBottomSheet(
       context: context,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       isScrollControlled: true, // لجعل الصفحة تأخذ مساحة أكبر عند الحاجة
@@ -23,7 +20,7 @@ void showCustomBottomSheet(BuildContext context) {
     
   child: ListView.builder(
     shrinkWrap: true,
-    physics: NeverScrollableScrollPhysics(),
+    physics: const NeverScrollableScrollPhysics(),
     itemCount: controller.alldata.length,
     itemBuilder: (context,index){
      

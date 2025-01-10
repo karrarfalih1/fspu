@@ -1,7 +1,7 @@
  //في هذه الصفحة نحن نفحص الايميل فقط 
 import 'package:get/get.dart';
 import 'package:fspu/controller/auth/sugnup_controller.dart';
-import 'package:fspu/controller/home_controller.dart';
+import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/core/constantk/routesname.dart';
 import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
 import 'package:fspu/core/servicesk/services.dart';

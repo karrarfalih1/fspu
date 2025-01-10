@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fspu/core/classk/handlingdataview.dart';
 import 'package:get/get.dart';
-import 'package:fspu/controller/home_controller.dart';
+import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/linkapi.dart';
 
 class SilderImageHome extends GetView<HomeControllerImp> {
@@ -10,9 +11,13 @@ class SilderImageHome extends GetView<HomeControllerImp> {
   @override
   Widget build(BuildContext context) {
     return  GetBuilder<HomeControllerImp>(builder: (controller)=>
-    Container(  height: 200,
+    Container( 
+
+      
+       height: 200,
                           margin: const EdgeInsets.symmetric(horizontal: 10),
-                          child: PageView.builder(
+                          child: HandlingDataView(statusRequest: controller.statusRequest, widget: 
+                    PageView.builder(
                             controller: controller.pageController,
                             itemCount: controller.data.length,
                             onPageChanged: (index) {
@@ -28,7 +33,7 @@ class SilderImageHome extends GetView<HomeControllerImp> {
                                         "${Applink.imageslider}/${controller.data[index]["slider_iamge"]}"),
                               );
                             },
-                          ),
+                          ),      )
                         ));
   }
 }
