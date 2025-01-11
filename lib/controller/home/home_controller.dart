@@ -47,13 +47,10 @@ update();
 
 }
 
-
-
-
-
  PageController pageController=PageController();
  var currenPage=0.obs;
  @override
+
   void onInit() {
     FirebaseMessaging.instance.getToken().then((value){
       print("111111111111111111token00000000000000000token");
@@ -73,10 +70,11 @@ update();
   }
 
 
-
   gotoactivity(){
     Get.toNamed(Approute.activity);
   }
+  
+/////////////////////////////////
   void startAutoSlide(){
     Timer.periodic(const Duration(seconds: 10), (timer){
       if(currenPage.value<2){
@@ -97,7 +95,7 @@ update();
     // TODO: implement onClose
     super.onClose();
   }
-
+///////////////////////////////////////
     getSlider() async{
     statusRequest=StatusRequest.loading;
       update();

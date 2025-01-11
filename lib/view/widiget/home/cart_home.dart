@@ -3,7 +3,7 @@ import 'package:fspu/controller/home/cart_contrller.dart';
 import 'package:fspu/core/constantk/color.dart';
 import 'package:get/get.dart';
 
-class CartHome extends StatelessWidget{
+class CartHome extends GetView<CartContrllerImp>{
   const CartHome({super.key});
 
   @override
@@ -24,14 +24,20 @@ class CartHome extends StatelessWidget{
                                         horizontal: 7, vertical: 10),
                                     height: 120,
                                     width: 80,
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                         Icon(controller.datacart[index]['icon']),
-                                         Text("${controller.datacart[index]['title']}")
-                                      ],),
+                                    child: InkWell(
+                                      onTap: (){
+                                   controller.chosecart(index);
+                                        
+                                      },
+                                      child: Center(
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                           Icon(controller.datacart[index]['icon']),
+                                           Text("${controller.datacart[index]['title']}")
+                                        ],),
+                                      ),
                                     ));
                               }),
                         );
