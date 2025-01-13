@@ -23,8 +23,8 @@ class homepage extends StatelessWidget {
 
     MyServices myServices=Get.find();
      String userid=myServices.sharedPreferences.getString("gender").toString();
-     ActivityControllerImp controllerActivity=Get.put(ActivityControllerImp());
-     Get.put(HomeControllerImp());
+    ActivityControllerImp controllerActivity=Get.put(ActivityControllerImp());
+    Get.put(HomeControllerImp());
     GetUniversityControllerImp controlleruniversity=Get.put(GetUniversityControllerImp());
     return SafeArea(
       child: Scaffold(

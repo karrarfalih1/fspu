@@ -1,0 +1,120 @@
+
+import 'package:flutter/material.dart';
+import 'package:fspu/controller/home/home_controller.dart';
+import 'package:fspu/core/classk/statusRequest.dart';
+import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
+import 'package:fspu/core/servicesk/services.dart';
+import 'package:fspu/data/datasource/fspudata/getwining_data.dart';
+import 'package:fspu/view/screen/activity/activity.dart';
+import 'package:fspu/view/screen/cart/about_as.dart';
+import 'package:fspu/view/screen/cart/boist.dart';
+import 'package:get/get.dart';
+
+abstract class PointsController extends GetxController{
+
+}
+class PointsControllerImp extends PointsController{
+  MyServices myServices=Get.find();
+GetwiningData getwiningData =GetwiningData(Get.find());
+  StatusRequest statusRequest=StatusRequest.none;
+  List data=[];
+ late HomeControllerImp controllerHome;
+ late RxInt newpoints=0.obs;
+ late RxInt oldpoints=0.obs;
+ //////////////للضغط مرة واحدة في اليوم/////////
+ Rx<DateTime?> lastClickTime=Rx<DateTime?>(null);// وقت الضغط الأخير
+ Rx<Duration> remainingTime=Duration.zero.obs; // الوقت المتبقي
+ loadLastClickTime(){
+   String? lastclickoneString= myservices.sharedPreferences.getString("lastclikone");
+  if(lastclickoneString !=null){
+    lastClickTime.value=DateTime.parse(lastclickoneString);
+    updataRemainingTime();//تحديث الوقت المتبقي
+  }
+ }
+ updataRemainingTime(){
+  if(lastClickTime.value!=null){
+    DateTime now=DateTime.now();
+    Duration diffrence=now.difference(lastClickTime.value!);//حساب الفرق
+    if(diffrence< Duration(days: 1)){
+      remainingTime.value=Duration(days: 1)-diffrence;
+
+    }else{
+      remainingTime.value=Duration.zero;//لا يوجد وقت متبقي
+    }
+  }
+ }
+handleButtonClick(){
+  if(remainingTime.value>Duration.zero){
+     Get.snackbar(
+        'تنبيه',
+        'لا يمكنك الضغط الآن. الوقت المتبقي: ${remainingTime.value.inHours} ساعة و ${remainingTime.value.inMinutes % 60} دقيقة.',
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      return;
+    }
+    // تنفيذ الإجراء المطلوب عند الضغط
+    Get.snackbar(
+      'نجاح',
+      'تم الضغط بنجاح!',
+      snackPosition: SnackPosition.BOTTOM,
+    );
+
+    // حفظ وقت الضغط
+    DateTime now = DateTime.now();
+   // box.write('lastClickTime', now.toIso8601String());
+   myservices.sharedPreferences.setString("lastclikone",now.toIso8601String());
+    lastClickTime.value = now; // تحديث وقت الضغط
+   updataRemainingTime(); // إعادة حساب الوقت المتبقي
+  }
+
+ ////////////////
+@override
+  void onInit() {
+     loadLastClickTime();
+  getwiningpoints();
+    oldpoints.value=int.parse(myServices.sharedPreferences.getString("point").toString());
+    controllerHome=Get.find<HomeControllerImp>();
+    newpoints.value=controllerHome.mypoints.value;
+    super.onInit();
+  }
+funpluspoints(int x){
+  print("${myServices.sharedPreferences.getString("lastclikone")}");
+  
+newpoints.value= newpoints.value +x;
+
+ update();
+  
+}
+
+ @override
+  void onClose() async{
+    
+     print("-------------newpints--------------");
+    print("$newpoints"); 
+     print("-------------oldpoins--------------");
+    print("$oldpoints");
+     
+    super.onClose();
+   
+   
+   await myServices.sharedPreferences.setString("point",newpoints.toString());
+    
+    // TODO: implement onClose
+  }
+
+       getwiningpoints() async{
+    statusRequest=StatusRequest.loading;
+      update();
+    var response=await getwiningData.getdata();
+    statusRequest=handleingData(response);
+if(StatusRequest.success==statusRequest){
+  if(response['status']=='success'){
+  
+data.addAll(response['data']);
+print(data);
+  }else{
+    statusRequest=StatusRequest.failure; }
+}
+update();
+  }
+}

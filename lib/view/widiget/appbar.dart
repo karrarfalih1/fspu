@@ -8,8 +8,10 @@ PreferredSizeWidget customAppBar( ) {
   HomeControllerImp controller=Get.find();
   return  AppBar(
             toolbarHeight: 60,
-    title: const Text("100",style: TextStyle(color: Colors.white),),
-            backgroundColor: AppColor.fspucolor,
+    title: Row(children: [ Obx(()=>Text("${controller.mypoints.value}",style: TextStyle(fontSize: 18,color: Colors.white),),) ,
+   const SizedBox(width: 3,),
+     const    Text("نقطة",style: TextStyle(fontSize: 16,color: Colors.white),), ],),
+      backgroundColor: AppColor.fspucolor,
             actions: [
          const     SizedBox(width: 10,),
                const Text(

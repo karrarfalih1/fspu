@@ -41,4 +41,11 @@ static const university ="$server/university/getun.php";
 static const universityplus ="$server/university/plusun.php";
 
 static const activity ="$server/activity/view.php";
+////////////////points/////////////
+static const pluspoints ="$server/plus_points.php";
+
+static const getpoints ="$server/home/getpoints.php";
+
+static const getwining ="$server/gewining.php";
+
 }

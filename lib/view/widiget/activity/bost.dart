@@ -103,7 +103,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
                              
                             ),
                             
-                             child:const Center(child: Text("تفعيل الكود",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)))),
+                             child:const Center(child: Text("تفعيل الكود",style: TextStyle( color: Colors.black,fontWeight: FontWeight.bold),)))),
                          //    Spacer(),
                                  Container(
                                   margin: const EdgeInsets.symmetric(horizontal: 10),

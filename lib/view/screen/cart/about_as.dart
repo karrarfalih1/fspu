@@ -84,16 +84,16 @@ const SizedBox(height: 40,),
       endIndent: 60,
      ),
     Container(
-   margin: EdgeInsets.only(left: Get.width/2),
+   margin: EdgeInsets.only(right: Get.width/2),
       child: Container(
         height: 50,
        
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(10)),
+          borderRadius: BorderRadius.only(topRight: Radius.circular(10)),
           border: Border(
             
             top: BorderSide(color: AppColor.fspucolor),
-            left: BorderSide(color: AppColor.fspucolor))
+            right: BorderSide(color: AppColor.fspucolor))
         ),
       
       ),
@@ -142,15 +142,15 @@ const SizedBox(height: 100,),
       child: const Text("""نضع الإنسان في صلب رؤيتنا، ونسعى إلى تطوير مهاراته وتمكينه ليكون قائداً فاعلاً في مجتمعه. نؤمن بإعداد جيل يحمل القيم الأصيلة، ويمتلك المنطق الرصين والقدرة على قيادة المسار نحو تحقيق رؤية المجتمع المتكامل.
 """,textAlign: TextAlign.justify,style: TextStyle(fontSize: 15),),),
     Container(
-   margin: EdgeInsets.only(right: Get.width/2),
+   margin: EdgeInsets.only(left: Get.width/2),
       child: Container(
         height: 50,
        
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
           border: Border(
             bottom: BorderSide(color: AppColor.fspucolor),
-            right: BorderSide(color: AppColor.fspucolor))
+            left: BorderSide(color: AppColor.fspucolor))
         ),
       
       ),

@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:fspu/data/datasource/fspudata/points.dart';
 import 'package:get/get.dart';
 import 'package:fspu/core/classk/statusRequest.dart';
 import 'package:fspu/core/constantk/routesname.dart';
@@ -15,9 +16,22 @@ abstract class HomeController extends  GetxController{
   
 }
 class HomeControllerImp extends HomeController{
+  Points points =Points(Get.find());
   LocaleController controllerthem=Get.put(LocaleController());
 StatusRequest statusRequest=StatusRequest.none;
+
+StatusRequest statusRequestpoints=StatusRequest.none;
 SliderData sliderData=SliderData(Get.find());
+//////////points///////////
+RxInt mypoints =0.obs;
+
+
+/////////////
+
+
+
+
+
 List data=[];
  var Number_of_males=0;
  var Number_of_females=0;
@@ -50,10 +64,15 @@ update();
  PageController pageController=PageController();
  var currenPage=0.obs;
  @override
-
+void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+     startAutoSlide();
+  }
   void onInit() {
     FirebaseMessaging.instance.getToken().then((value){
       print("111111111111111111token00000000000000000token");
+      print("${myservices.sharedPreferences.getString("karrar")}");
       print(value);
       String? token=value;
     });
@@ -64,9 +83,12 @@ update();
     }
     // TODO: implement onInit
     super.onInit();
-     startAutoSlide();
+    
      getSlider();
       print("========== GetCount==========");
+      print(myservices.sharedPreferences.getString("id"));
+       getPoints() ;
+      
   }
 
 
@@ -76,6 +98,7 @@ update();
   
 /////////////////////////////////
   void startAutoSlide(){
+    
     Timer.periodic(const Duration(seconds: 10), (timer){
       if(currenPage.value<2){
         currenPage.value++;
@@ -90,10 +113,11 @@ update();
     });
   }
   @override
-  void onClose() {
+  void onClose() async{
+    super.onClose();
+    
     pageController.dispose();
     // TODO: implement onClose
-    super.onClose();
   }
 ///////////////////////////////////////
     getSlider() async{
@@ -112,5 +136,22 @@ if(StatusRequest.success==statusRequest){
 update();
   }
 
-
+////////////////////الحصول على النقاط///////
+    getPoints() async{
+    statusRequestpoints=StatusRequest.loading;
+      update();
+    var response=await points.getPoints(myservices.sharedPreferences.getString("id").toString());
+    statusRequestpoints=handleingData(response);
+if(StatusRequest.success==statusRequestpoints){
+  if(response['status']=='success'){
+  
+  mypoints.value= response['data']['users_points'];
+  print("00000000000000pints");
+   print(mypoints);
+     print("00000000000000pints");
+  }else{
+    statusRequestpoints=StatusRequest.failure; }
+}
+update();
+  }
 }
