@@ -14,6 +14,7 @@ static const String Logo="assets/images/logoauth2.png";
  
  static const String fspulogo="assets/images/fspulogo.png";
  
+ static const String fspulogo1="assets/images/fspu1.png";
  static const String manuser="assets/images/manuser1.png";
                  
   

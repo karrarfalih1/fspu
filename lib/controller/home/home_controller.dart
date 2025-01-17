@@ -16,6 +16,7 @@ abstract class HomeController extends  GetxController{
   
 }
 class HomeControllerImp extends HomeController{
+  GlobalKey<ScaffoldState>scaffoldkey=GlobalKey();
   Points points =Points(Get.find());
   LocaleController controllerthem=Get.put(LocaleController());
 StatusRequest statusRequest=StatusRequest.none;

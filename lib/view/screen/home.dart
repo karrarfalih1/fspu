@@ -24,11 +24,12 @@ class homepage extends StatelessWidget {
     MyServices myServices=Get.find();
      String userid=myServices.sharedPreferences.getString("gender").toString();
     ActivityControllerImp controllerActivity=Get.put(ActivityControllerImp());
-    Get.put(HomeControllerImp());
+    HomeControllerImp controllerhome= Get.put(HomeControllerImp());
     GetUniversityControllerImp controlleruniversity=Get.put(GetUniversityControllerImp());
     return SafeArea(
       child: Scaffold(
-          appBar:customAppBar(),
+        key:controllerhome.scaffoldkey ,
+        //  appBar:customAppBar(),
           drawer: const Drawer(
 
             child:DrowerCostam()
@@ -41,9 +42,7 @@ class homepage extends StatelessWidget {
                     //  padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: ListView(
                       children: [
-                        const SizedBox(
-                          height: 10,
-                        ),
+                       
                         const SilderImageHome(),
                   const CartHome(),
                      const CardHome(title: 'التبليغات', subtitle: 'على الاعضاء التوجه  للمقر الرئيسي', icons: Icons.message, trailtext: '2025-1-2',),

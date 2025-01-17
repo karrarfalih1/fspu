@@ -34,8 +34,8 @@ class CartHome extends GetView<CartContrllerImp>{
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           crossAxisAlignment: CrossAxisAlignment.center,
                                           children: [
-                                           Icon(controller.datacart[index]['icon']),
-                                           Text("${controller.datacart[index]['title']}")
+                                           Icon(controller.datacart[index]['icon'],color: AppColor.fspucolortwo,),
+                                           Text("${controller.datacart[index]['title']}",style: TextStyle(color:  AppColor.fspucolortwo,fontWeight: FontWeight.bold),)
                                         ],),
                                       ),
                                     ));
