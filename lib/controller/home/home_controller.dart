@@ -64,11 +64,8 @@ update();
  PageController pageController=PageController();
  var currenPage=0.obs;
  @override
-void onReady() {
-    // TODO: implement onReady
-    super.onReady();
-     startAutoSlide();
-  }
+
+  @override
   void onInit() {
     FirebaseMessaging.instance.getToken().then((value){
       print("111111111111111111token00000000000000000token");
@@ -146,6 +143,7 @@ if(StatusRequest.success==statusRequestpoints){
   if(response['status']=='success'){
   
   mypoints.value= response['data']['users_points'];
+       startAutoSlide();
   print("00000000000000pints");
    print(mypoints);
      print("00000000000000pints");

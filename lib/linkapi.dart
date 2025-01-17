@@ -39,8 +39,12 @@ static const imageslider ="$server/upload";
 static const university ="$server/university/getun.php";
 
 static const universityplus ="$server/university/plusun.php";
+////////////////activity/////////////
+static const activity_view ="$server/activity/view.php";
 
-static const activity ="$server/activity/view.php";
+static const activity_delet ="$server/activity/delet.php";
+
+static const activity_add ="$server/activity/add.php";
 ////////////////points/////////////
 static const pluspoints ="$server/plus_points.php";
 

@@ -13,4 +13,5 @@ class AppColor{
   
     static const Color fspucolor1=Color.fromARGB(255, 148, 213, 211);
     static const Color fspucolor2=Color(0xFFB0BEC5);
+    static const Color fspucolortwo=Color(0xffd49324);
 }

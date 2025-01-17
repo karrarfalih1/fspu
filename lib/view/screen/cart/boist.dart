@@ -76,7 +76,7 @@ class Boistview extends StatelessWidget{
      ],),
      const SizedBox(height: 10,),
     Padding(
-    padding: EdgeInsets.all(5),
+    padding: const EdgeInsets.all(5),
      child: InkWell(
       onTap:(){
         controller.remainingTime.value>Duration.zero?null
@@ -90,13 +90,13 @@ class Boistview extends StatelessWidget{
         
          
            child: ListTile(
-            title: Text("اللهم صل على محمد وال محمد"),
+            title: const Text("اللهم صل على محمد وال محمد"),
             subtitle: controller.remainingTime.value > Duration.zero
                 ? Text(
                     'انتظر ${controller.remainingTime.value.inHours} ساعة و ${controller.remainingTime.value.inMinutes % 60} دقيقة',
                   )
-                : Text(' اضغط هنا للحصول على النقاط'),
-            trailing: Text(
+                : const Text(' اضغط هنا للحصول على النقاط'),
+            trailing: const Text(
               "5 نقاط",style: TextStyle(color: AppColor.fspucolor),
             ),
            ),
@@ -127,12 +127,12 @@ child: Container(
   child: Column(
   crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-    Container(
+    const SizedBox(
       width: double.infinity,
-      child: const Text("الطرق الاخرى للحصول على نقاط",textAlign: TextAlign.center,)),
+      child: Text("الطرق الاخرى للحصول على نقاط",textAlign: TextAlign.center,)),
       const SizedBox(height: 10,),
      const Row(children: [SizedBox(width: 2,),
-      const Icon(Icons.looks_one),Text("تسجيل شخص ما عن طريق الايدي الخاص بك",style: TextStyle(fontSize: 12),),
+      Icon(Icons.looks_one),Text("تسجيل شخص ما عن طريق الايدي الخاص بك",style: TextStyle(fontSize: 12),),
      SizedBox(width: 4,),
      
      Text("25 نقطة",style: TextStyle(color: AppColor.fspucolor,))],),
@@ -142,7 +142,7 @@ child: Container(
      Text("40 نقطة",style: TextStyle(color: AppColor.fspucolor,))],),
 
      const SizedBox(height: 20,),
-     Container(
+     SizedBox(
       width: double.infinity,
       child: Text("  الايدي الخاص بك هو : ${myservices.sharedPreferences.getString("id")}",textAlign: TextAlign.center,))
   
@@ -152,30 +152,30 @@ child: Container(
      
          ,
 const SizedBox(height: 20,),
-Container(
+const SizedBox(
   width: double.infinity,
-  child: const Text("المتصدرون",style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),)
+  child: Text("المتصدرون",style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),)
           ,const SizedBox(height: 10,),
           GetBuilder<PointsControllerImp>(builder:(controller)=>
           Container(
            
       //    height: 700,
           child: Card(child: ListView.separated(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
                itemCount: controller.data.length,
                             separatorBuilder: (BuildContext context, int index) { 
-              return Divider();
+              return const Divider();
               }, 
             itemBuilder: (
             BuildContext context, int index) { 
               return Container(
               color:controller.data[index]['users_id'].toString()==controller.myServices.sharedPreferences.getString('id')? AppColor.fspucolor2:null,
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 child:Row(children: [
                 Text("${index+1}-"),
                 Text("${controller.data[index]['users_name']}"),
-                Spacer(),
+                const Spacer(),
                 Text("${controller.data[index]['users_points']} نقطة")
               ],),);
              },

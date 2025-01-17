@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fspu/core/constantk/color.dart';
-import 'package:fspu/test.dart';
 import 'package:get/get.dart';
 
 class AboutAs extends StatelessWidget{
+  const AboutAs({super.key});
+
   @override
   Widget build(BuildContext context) {
    
@@ -40,7 +41,7 @@ class AboutAs extends StatelessWidget{
         ),
       ),
       const SizedBox(height:30),
-      Container(
+      SizedBox(
         height: 300,
     //width: double.infinity,
         child: Row(

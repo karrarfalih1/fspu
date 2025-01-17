@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fspu/core/constantk/color.dart';
 
 class Adrees extends StatelessWidget{
+  const Adrees({super.key});
+
   @override
   Widget build(BuildContext context) {
    
@@ -16,7 +18,7 @@ class Adrees extends StatelessWidget{
         centerTitle: true,
        backgroundColor: AppColor.fspucolor,
         title: Text("من نحن",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color:Colors.white),),
-        bottom: TabBar(tabs: [
+        bottom: const TabBar(tabs: [
           Icon(Icons.man),
             Icon(Icons.female)
         ]),),

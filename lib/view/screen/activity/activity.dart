@@ -34,6 +34,9 @@ body: Container(
      },
       itemCount: controller.data.length,
        itemBuilder:(context,int index){
+        if(controller.isSelect[controller.data[index]["activity_id"]]==null){
+        controller.isSelect[controller.data[index]["activity_id"]]=controller.data[index]['participate'];
+        }
         return BostActivity(activityModel: ActivityModel.fromJson(controller.data[index]));
        },)),
 )) ;

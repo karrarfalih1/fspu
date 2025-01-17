@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fspu/controller/auth/sugnup_controller.dart';
 import 'package:fspu/controller/university/university_controller.dart';
-import 'package:fspu/core/constantk/routesname.dart';
 import 'package:fspu/view/screen/auth/signup.dart';
 import 'package:fspu/view/screen/auth/verifycodesignup.dart';
 import 'package:fspu/view/screen/universityy/choseunivesity.dart';

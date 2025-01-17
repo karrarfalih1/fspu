@@ -1,13 +1,9 @@
 
-import 'package:flutter/material.dart';
 import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/core/classk/statusRequest.dart';
 import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
 import 'package:fspu/core/servicesk/services.dart';
 import 'package:fspu/data/datasource/fspudata/getwining_data.dart';
-import 'package:fspu/view/screen/activity/activity.dart';
-import 'package:fspu/view/screen/cart/about_as.dart';
-import 'package:fspu/view/screen/cart/boist.dart';
 import 'package:get/get.dart';
 
 abstract class PointsController extends GetxController{
@@ -35,8 +31,8 @@ GetwiningData getwiningData =GetwiningData(Get.find());
   if(lastClickTime.value!=null){
     DateTime now=DateTime.now();
     Duration diffrence=now.difference(lastClickTime.value!);//حساب الفرق
-    if(diffrence< Duration(days: 1)){
-      remainingTime.value=Duration(days: 1)-diffrence;
+    if(diffrence< const Duration(days: 1)){
+      remainingTime.value=const Duration(days: 1)-diffrence;
 
     }else{
       remainingTime.value=Duration.zero;//لا يوجد وقت متبقي
@@ -72,8 +68,15 @@ handleButtonClick(){
   void onInit() {
      loadLastClickTime();
   getwiningpoints();
+  if(myServices.sharedPreferences.getString("point") !=null){
+ oldpoints.value=int.parse(myServices.sharedPreferences.getString("point").toString());
+  
+  }else{
+    myServices.sharedPreferences.setString("point",'0');
     oldpoints.value=int.parse(myServices.sharedPreferences.getString("point").toString());
-    controllerHome=Get.find<HomeControllerImp>();
+  
+  }
+     controllerHome=Get.find<HomeControllerImp>();
     newpoints.value=controllerHome.mypoints.value;
     super.onInit();
   }

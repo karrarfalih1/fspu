@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fspu/data/model/itemsmodel.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:fspu/controller/activity_controller.dart';
@@ -140,14 +141,38 @@ class BostActivity extends GetView<ActivityControllerImp> {
                        ],),
                      ),
                      const Spacer(),
-                     Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                      height: 70,
-                      width: double.infinity,
-                      child: const Card(color: AppColor.fspucolor,
-                      child: Center(child: Text("اضغط هنا لتسجيل  اسمك",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),),
-
-                      ),),const SizedBox(height: 10,)
+                     InkWell(
+                      onTap: (){
+                        if(controller.isSelect[activityModel.activityId]==0){
+                          controller.setActivity(activityModel.activityId, 1);
+                           controller.addactivity(activityModel.activityId.toString());
+                        }else{
+                          Get.defaultDialog(
+                            title: "تنبيه",
+                            titleStyle: TextStyle(color:  AppColor.fspucolortwo),
+                            middleText: "هل انت متاكد من حذف اسمك من هذا النشاط؟",
+                            actions: [
+                              ElevatedButton(onPressed:(){
+  controller.setActivity(activityModel.activityId, 0);
+                    controller.deletactivity(activityModel.activityId.toString());
+                 Get.back();
+                              }, child:const Text("نعم",)),
+                             SizedBox(width: 40,),
+                                 ElevatedButton(onPressed:(){  Get.back();}, child:const Text("لا"))
+                      
+                            ]
+                          );
+                               };
+                      },
+                       child: Container(
+                                           padding: const EdgeInsets.symmetric(horizontal: 10),
+                        height: 70,
+                        width: double.infinity,
+                        child:  Card(color:controller.isSelect[activityModel.activityId]==0? AppColor.fspucolor:AppColor.fspucolortwo,
+                        child:  Center(child: Text(controller.isSelect[activityModel.activityId]==0? "اضغط هنا لتسجيل  اسمك":"الغاء النشاط",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),),
+                       
+                        ),),
+                     ),const SizedBox(height: 10,)
                   ],),
                 ) )
           ],)))

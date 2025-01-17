@@ -10,9 +10,9 @@ chosecart(index);
 }
 class CartContrllerImp extends CartContrller{
 List<Widget> page=[
-  AboutAs(),
-  Boistview(),
-  Activity()
+  const AboutAs(),
+  const Boistview(),
+  const Activity()
 
 ];
 List datacart=[
@@ -29,7 +29,8 @@ List datacart=[
   "title":"من نحن"},
 
 ];
-chosecart(index){
+@override
+  chosecart(index){
 Get.to( ()=> page[index]);
 update();
 }

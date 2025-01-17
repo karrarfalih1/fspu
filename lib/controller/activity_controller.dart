@@ -1,5 +1,8 @@
 
 
+import 'package:flutter/cupertino.dart';
+import 'package:fspu/controller/home/home_controller.dart';
+import 'package:fspu/core/constantk/color.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:fspu/core/classk/statusRequest.dart';
@@ -14,13 +17,18 @@ getActivityData();
 class ActivityControllerImp extends ActivityController{
 
   ActivityData activityData=ActivityData(Get.find());
-
+  
+Map isSelect={};
   List data=[];
   String? lastdate;
    String? datek;
    String? fersttitle;
   StatusRequest statusRequest =StatusRequest.none;
 
+setActivity(id,val){
+  isSelect[id]=val;
+  update();
+}
   @override
   void onInit() {
       getActivityData();
@@ -37,7 +45,9 @@ class ActivityControllerImp extends ActivityController{
     update();
 //لجلب المعلومات
 //الكيت داتا ترجعلنا اما خطا معين اما المصفوفة الي بيها البيانات
-    var response=await activityData.getdata();
+    var response=await activityData.getdata(
+      myservices.sharedPreferences.getString("id")
+    );
 
     statusRequest=handleingData(response);
 
@@ -60,5 +70,41 @@ if(StatusRequest.success==statusRequest){
  
 }
 update();
+  }
+  deletactivity(activity_id)async{
+    var response =await activityData.activity_delet(activity_id, myservices.sharedPreferences.getString("id"));
+    statusRequest=handleingData(response);
+    if(StatusRequest.success==statusRequest){
+      if(response['status']=='success'){
+        Get.rawSnackbar(
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: AppColor.fspucolor,
+          animationDuration: Duration(seconds: 3),
+          title: "نجاح",
+          messageText: Text("لقد تم حذف اسمك من النئاط بنجاح")
+        );
+      }else{
+        statusRequest=StatusRequest.failure;
+      }
+    }
+    update();
+  }
+    addactivity(activity_id)async{
+    var response =await activityData.activity_add(activity_id, myservices.sharedPreferences.getString("id"));
+    statusRequest=handleingData(response);
+    if(StatusRequest.success==statusRequest){
+      if(response['status']=='success'){
+        Get.rawSnackbar(
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: AppColor.fspucolor,
+          animationDuration: Duration(seconds: 3),
+          title: "نجاح",
+          messageText: Text("لقد تم اضافة اسمك بنجاح")
+        );
+      }else{
+        statusRequest=StatusRequest.failure;
+      }
+    }
+    update();
   }
 }
