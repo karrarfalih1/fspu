@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fspu/core/constantk/color.dart';
 
 class CardHome extends StatelessWidget {
   final String title;
@@ -18,7 +19,7 @@ class CardHome extends StatelessWidget {
                             child:  Card(
                               child: ListTile(
       
-                                trailing:Text(trailtext),
+                                trailing:Text(trailtext,style: TextStyle(color: AppColor.fspucolortwo,)),
                                 subtitle: Text(
                                   subtitle,
                                   style:const TextStyle(
@@ -27,11 +28,11 @@ class CardHome extends StatelessWidget {
                                 ),
                                 title: Text(
                                  title,
-                                  style:const TextStyle(
+                                  style:const TextStyle(color: AppColor.fspucolor,
                                       fontSize: 20,),
                                   textDirection: TextDirection.rtl,
                                 ),
-                                focusColor: Colors.red,
+                              //  focusColor: Colors.red,
                                 leading:Icon(icons),
                               ),
                             ),

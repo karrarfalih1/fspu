@@ -22,7 +22,7 @@ class ForgetPassword extends StatelessWidget{
         //لجعلالعنوان في المنتصف
         centerTitle: true,
        backgroundColor: Colors.white,
-        title: Text("Forget Password",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
+        title: Text("نسيت كلمة السر",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
 body: GetBuilder<ForgetPassword_controllerImp>(builder: (controller)=>
 HandlingDataView(statusRequest: controller.statusRequest, widget: 
 Container(
@@ -34,9 +34,9 @@ Container(
     children:[
 
     const SizedBox(height: 30,),
-    const CustomTextTitleAuth(title:"Chek Email",),
+    const CustomTextTitleAuth(title:"الايميل",),
      const SizedBox(height: 10,),
-     const CustomTextSubTitleAuth(subtitle: 'pless Enter your email to chack it',)
+     const CustomTextSubTitleAuth(subtitle: 'الرجاء كتابة بريدك الذي سجلت من خلاله مسبقا',)
      ,const SizedBox(height: 35,),
     
       Customtextfeld(
@@ -52,7 +52,7 @@ Container(
       //   mycontroller: ,
       ),
     
-     CustomButtomAuth(textbuttom: "Check",onPressed: (){
+     CustomButtomAuth(textbuttom: "تحقق",onPressed: (){
       controller.checkemail();
      },),
     const SizedBox(height: 30,),

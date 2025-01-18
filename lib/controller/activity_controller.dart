@@ -81,7 +81,7 @@ update();
           backgroundColor: AppColor.fspucolor,
           animationDuration: Duration(seconds: 3),
           title: "نجاح",
-          messageText: Text("لقد تم حذف اسمك من النئاط بنجاح")
+          messageText: Text("لقد تم حذف اسمك من النشاط بنجاح")
         );
       }else{
         statusRequest=StatusRequest.failure;

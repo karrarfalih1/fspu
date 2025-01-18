@@ -11,6 +11,7 @@ import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
 import 'package:fspu/core/localizationk/changelocal.dart';
 import 'package:fspu/core/servicesk/services.dart';
 import 'package:fspu/data/datasource/fspudata/slider.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 MyServices myservices=Get.find();
 abstract class HomeController extends  GetxController{
   
@@ -29,7 +30,9 @@ RxInt mypoints =0.obs;
 
 /////////////
 
-
+/////////webview///
+late final WebViewController controller_webview;
+////////
 
 
 
@@ -68,6 +71,11 @@ update();
 
   @override
   void onInit() {
+controller_webview=WebViewController()
+..loadRequest(
+Uri.parse('https://mohesr.gov.iq/ar/')
+
+);
     FirebaseMessaging.instance.getToken().then((value){
       print("111111111111111111token00000000000000000token");
       print("${myservices.sharedPreferences.getString("karrar")}");

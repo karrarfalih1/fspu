@@ -21,7 +21,7 @@ List<GetPage<dynamic>>? routes=[
   //test
   //GetPage(name: "/", page: ()=>const SignUp()),
   //Auth
-      GetPage(name: "/", page: ()=>const OnBoarding(),middlewares: [ Mymiddleware() ]),
+      GetPage(name: "/", page: ()=>const SingupScreen(),middlewares: [ Mymiddleware() ]),
  // GetPage(name: "/", page: ()=> SingupScreen()),
  
  GetPage(name: Approute.login, page: ()=>const Login()),

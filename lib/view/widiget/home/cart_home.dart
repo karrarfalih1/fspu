@@ -26,7 +26,15 @@ class CartHome extends GetView<CartContrllerImp>{
                                     width: 80,
                                     child: InkWell(
                                       onTap: (){
-                                   controller.chosecart(index);
+                                        if(index>1){
+                                          Get.defaultDialog(
+                                            title: "تنبيه ",
+                                            middleText: "لم يكتمل"
+                                          );
+                                        }else{
+                                           controller.chosecart(index);
+                                        }
+                                  
                                         
                                       },
                                       child: Center(
@@ -35,7 +43,7 @@ class CartHome extends GetView<CartContrllerImp>{
                                           crossAxisAlignment: CrossAxisAlignment.center,
                                           children: [
                                            Icon(controller.datacart[index]['icon'],color: AppColor.fspucolortwo,),
-                                           Text("${controller.datacart[index]['title']}",style: TextStyle(color:  AppColor.fspucolortwo,fontWeight: FontWeight.bold),)
+                                           Text("${controller.datacart[index]['title']}",style: TextStyle(color:  AppColor.fspucolortwo,fontWeight: FontWeight.bold,fontSize: 13),)
                                         ],),
                                       ),
                                     ));

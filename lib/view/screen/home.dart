@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:fspu/view/screen/webviewtest.dart';
 import 'package:fspu/view/widiget/home/cart_home.dart';
 import 'package:fspu/view/widiget/home/drower_costam.dart';
 import 'package:get/get.dart';
@@ -45,10 +46,14 @@ class homepage extends StatelessWidget {
                        
                         const SilderImageHome(),
                   const CartHome(),
-                     const CardHome(title: 'التبليغات', subtitle: 'على الاعضاء التوجه  للمقر الرئيسي', icons: Icons.message, trailtext: '2025-1-2',),
+                      InkWell(
+                        onTap: (){
+                      //    Get.to(Webviewtest());
+                        },
+                        child: CardHome(title: 'التبليغات', subtitle: 'على الاعضاء التوجه  للمقر الرئيسي', icons: Icons.message, trailtext: '2025-1-2',)),
                      GetBuilder<ActivityControllerImp>(builder:(controllerA)=>
                      HandlingDataView(statusRequest: controllerA.statusRequest, widget: CardHome(ontap: controller.gotoactivity, 
-                      title: 'جدول الاعمال', subtitle: '${controllerA.fersttitle}', icons: Icons.message, trailtext: '${controllerA.datek}',),
+                      title: 'جدول الاعمال', subtitle: '${controllerA.fersttitle}', icons: Icons.date_range, trailtext: '${controllerA.datek}',),
                    )
                      ),
                //   

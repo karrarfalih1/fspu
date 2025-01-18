@@ -22,7 +22,7 @@ class Success_Reset_Password extends GetView<LocaleController>{
         //لجعلالعنوان في المنتصف
         centerTitle: true,
        backgroundColor: Colors.white,
-        title: Text("Success Reset Password",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
+        title: Text("لقد تم تغيير كلمة المرور بنجاح",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
 
 body: Container(
   color: Colors.white,
@@ -35,12 +35,12 @@ body: Container(
     
     children: [
      const Icon(Icons.check,size: 200,),
-     const Text("Go to Login"),
+     const Text("الانتقال الى تسجيل الدخول"),
   //   SizedBox(height: 100,),
  const Spacer(),
         SizedBox(
           width: double.infinity,
-          child: CustomButtomAuth(textbuttom: "Sign In",onPressed: (){
+          child: CustomButtomAuth(textbuttom: "تسجيل الدخول",onPressed: (){
             controller.GoToSignIn();
              //   controller.();
                },),

@@ -38,7 +38,7 @@ SizedBox(
       
        const Center(child: CustomLogoAuth()),
         const SizedBox(height: 10,),
-        const CustomTextSubTitleAuth(subtitle: 'اهلا وسهلا بك في الاتحاد الطلابي  والشعبي ',),
+        const CustomTextSubTitleAuth(subtitle: 'اهلا بك في اتحاد الهيئات الطلابية والشعبية',),
         const SizedBox(height: 10,),
         TextSignUpAndSignIn(
     title2: "هل لديك حساب بالفعل؟",
@@ -54,8 +54,8 @@ SizedBox(
                 
               },
           mycontroller: controller.username_controller,
-          hintText: "مثل :كرار فالح فاخر",
-         labeltext: 'الاسم الثلاثي',
+          hintText: "ادخل اسمك الثلاثي",
+         labeltext: 'الاسم',
           iconss:Icons.person_outline,
         //   mycontroller: ,
         ),

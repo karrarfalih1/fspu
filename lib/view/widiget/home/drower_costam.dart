@@ -34,7 +34,7 @@ class DrowerCostam extends GetView<HomeControllerImp>{
                  Container(
                   decoration: BoxDecoration(
                   
-                      color:controller.positive==true? AppColor.fspucolor:AppColor.fspucolor1,
+                      color:controller.positive==true? AppColor.fspucolortwo:AppColor.fspucolortwo,
                     borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20))
                   ),
                  
@@ -92,12 +92,11 @@ class DrowerCostam extends GetView<HomeControllerImp>{
 const SizedBox(height: 20,),
   const Row(children: [
     SizedBox(width: 10,),
-    Text("الوضع :",style: TextStyle(fontSize: 20),),
+   
   SizedBox(width: 10,),
   DartLighMode()],)     
-,const ListTile(title: Text("المطورين"),
-leading: Icon(Icons.info,),
-),
+,
+SizedBox(height: 300,),
 InkWell(
   onTap: () {
      Get.defaultDialog(

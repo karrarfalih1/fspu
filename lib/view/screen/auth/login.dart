@@ -26,7 +26,7 @@ LoginControllerImp controllerLogin =Get.put(LoginControllerImp());
         //لجعلالعنوان في المنتصف
         centerTitle: true,
        backgroundColor: Colors.white,
-        title: Text("Sign In",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
+        title: Text(" تسجيل الدخول",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
 body: WillPopScope(
   //حتى  لا يخرج من التطبيق مباشرتا
   onWillPop: alertExitApp,
@@ -43,9 +43,9 @@ body: WillPopScope(
          const SizedBox(height: 15,),
          const Center(child: CustomLogoAuth()),
       const SizedBox(height: 15,),
-      const CustomTextTitleAuth(title:"welcome",),
+      const CustomTextTitleAuth(title:"اهلا بعودتك",),
        const SizedBox(height: 10,),
-       const CustomTextSubTitleAuth(subtitle: 'welcome2',)
+       const CustomTextSubTitleAuth(subtitle: 'قم بادخال بريدك الاكتروني وكلمة السر للاستمرار في استخدام التطبيق',)
        ,const SizedBox(height: 35,),
       
         Customtextfeld(
@@ -53,8 +53,8 @@ body: WillPopScope(
                 return validInput(val!, 5, 100,"email" );
               },
         mycontroller: controllerLogin.email_controller,
-          hintText: "Enter your Email",
-         labeltext: 'Email',
+          hintText: "ادخل بريدك الالكتروني",
+         labeltext: 'البريد',
           iconss:Icons.email_outlined,
         //   mycontroller: ,
         ),
@@ -69,22 +69,22 @@ body: WillPopScope(
               },
               obscureText: controllerLogin.typepaworrdtext==true?true:false,
             mycontroller: controllerLogin.password_controller,
-            hintText: "Enter your Password",
-         labeltext: 'Password',
+            hintText: "ادخل كلمة المرور ",
+         labeltext: 'كلمة المرور',
           iconss:controllerLogin.typepaworrdtext==true? Icons.remove_red_eye_outlined:Icons.lock,
         //   mycontroller: ,
         );
         }),
        InkWell(
         onTap: (){controllerLogin.goToforget();},
-        child: const Text("Foreget Password", textAlign: TextAlign.end,)),
-       CustomButtomAuth(textbuttom: "Sign In",onPressed: (){
+        child: const Text("هل نسيت كلمة السرك ؟", textAlign: TextAlign.end,)),
+       CustomButtomAuth(textbuttom: "تسجيل الدخول",onPressed: (){
         controllerLogin.login();
        },),
       const SizedBox(height: 30,),
     TextSignUpAndSignIn(
-    title2: "Don `t have account? ",
-    title: "Sing Up",onTap: (){
+    title2: "اليس لك حساب بالفعل؟ ",
+    title: "انشاء حساب جديد",onTap: (){
       print("to ---------------------- sign up");
       controllerLogin.goToSignUp();
      // Get.toNamed()

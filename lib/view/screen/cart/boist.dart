@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fspu/controller/cart_controller/points_controller.dart';
 import 'package:fspu/controller/home/home_controller.dart';
+import 'package:fspu/core/classk/handlingdataview.dart';
 import 'package:fspu/core/constantk/color.dart';
 import 'package:get/get.dart';
 
@@ -83,7 +84,7 @@ class Boistview extends StatelessWidget{
         :controller.handleButtonClick();
       
      
-     controller.funpluspoints(5)  ; 
+     controller.funpluspoints(5)  ;
       },
        child: Obx((){
         return Card (
@@ -157,7 +158,7 @@ const SizedBox(
   child: Text("المتصدرون",style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),)
           ,const SizedBox(height: 10,),
           GetBuilder<PointsControllerImp>(builder:(controller)=>
-          Container(
+     HandlingDataView(statusRequest: controller.statusRequest, widget:      Container(
            
       //    height: 700,
           child: Card(child: ListView.separated(
@@ -182,7 +183,7 @@ const SizedBox(
 
            
             
-          ),),)
+          ),),))
           ),const
         SizedBox(height: 15,)
     

@@ -86,6 +86,7 @@ dependencies:
   search_dropdown: ^0.0.2
   animated_toggle_switch: ^0.8.4
   firebase_auth: ^5.4.0
+  webview_flutter: ^4.10.0
 
 dev_dependencies:
   flutter_test:

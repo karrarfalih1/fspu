@@ -50,7 +50,7 @@ if(StatusRequest.success==statusRequest){
 update();
        //نستفاد منها بالاولةية عند بداية تسجيل الدخول
        myservices.sharedPreferences.setString("step","2");
-    Get.toNamed(Approute.homepage);
+    Get.offAllNamed(Approute.homepage);
   }else{
    Get.defaultDialog(title: "خطا",middleText: "الايميل او الرمز غير صحيح");
   }

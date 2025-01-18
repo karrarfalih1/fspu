@@ -36,9 +36,9 @@ class VerifyCodeSignUp extends StatelessWidget{
       
       const CustomTextTitleAuth(title:"توثيق الحساب",),
        const SizedBox(height: 10,),
-       const CustomTextSubTitleAuth(subtitle: "سوف يصلك رقم سري  على هذا البريد\n",),
-       Center(child: Text(controllerSignup.email_controller.text))
-       ,const SizedBox(height: 35,),
+       const CustomTextSubTitleAuth(subtitle: "سوف يصلك رقم سري  على بريدك \n",),
+     //  Center(child: Text(controllerSignup.email_controller.text))
+      const SizedBox(height: 35,),
       
     Directionality(
       

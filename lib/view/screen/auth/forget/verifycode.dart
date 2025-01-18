@@ -20,7 +20,7 @@ class VerfiyCode extends StatelessWidget{
         //لجعلالعنوان في المنتصف
         centerTitle: true,
        backgroundColor: Colors.white,
-        title: Text("Verification Code",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
+        title: Text("التوثيق",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
 body: GetBuilder<VerifyCode_ControllerImp>(builder: (controller)=>
  HandlingDataView(statusRequest: controller.statusRequest, widget: 
 Container(
@@ -33,12 +33,15 @@ Container(
        const SizedBox(height: 15,),
     
     const SizedBox(height: 15,),
-    const CustomTextTitleAuth(title:"Chek Code",),
+    const CustomTextTitleAuth(title:"كود التاكيد",),
      const SizedBox(height: 10,),
-     const CustomTextSubTitleAuth(subtitle: 'plees Entter the Code',)
+     const CustomTextSubTitleAuth(subtitle: 'الرجاء كتابة الكود الذي وصلك  هنا',)
      ,const SizedBox(height: 35,),
     
-  OtpTextField(
+ Directionality(
+      
+      textDirection: TextDirection.ltr, child: 
+        OtpTextField(
   focusedBorderColor: AppColor.maincolor,
 borderWidth: 2.5,
   fieldWidth: 45,
@@ -56,6 +59,7 @@ borderWidth: 2.5,
  
         }, // end onSubmit
     ),
+     )
 
     ],
 

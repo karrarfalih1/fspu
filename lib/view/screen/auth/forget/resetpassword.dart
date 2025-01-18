@@ -23,7 +23,7 @@ class ResetPassword extends StatelessWidget{
         //لجعلالعنوان في المنتصف
         centerTitle: true,
        backgroundColor: Colors.white,
-        title: Text("Reset Password",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
+        title: Text(" ",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppColor.grey),),),
 body: GetBuilder<ResetPassword_ControllerImp>(builder: (controller)=>
 HandlingDataView(statusRequest: controller.statusRequest, widget:
 Container(
@@ -35,9 +35,9 @@ Container(
     children:[
       const SizedBox(height: 15,),
       const SizedBox(height: 15,),
-      const CustomTextTitleAuth(title:"New Password",),
+      const CustomTextTitleAuth(title:"تغيير كلمة المرور",),
       const SizedBox(height: 10,),
-      const CustomTextSubTitleAuth(subtitle: 'plees enter new password',)
+      const CustomTextSubTitleAuth(subtitle: ' الرجاء ادخال  كلمة المرور الجديدة',)
      ,const SizedBox(height: 35,),
     
       Customtextfeld(
@@ -47,7 +47,7 @@ Container(
               
             },
         mycontroller: controller.newpassword_controller,
-        hintText: "Enter The New Password",
+        hintText: "اكتب كلمة السر الجديدة",
        labeltext: 'New Password',
         iconss:Icons.person_outline,
       //   mycontroller: ,
@@ -60,13 +60,13 @@ Container(
               
             },
         mycontroller: controller.Renewpassword_controller,
-        hintText: "Re Enter The New Password",
+        hintText: "اعد كتابة كلمة السر",
        labeltext: 'New Password',
         iconss:Icons.person_outline,
       //   mycontroller: ,
       ),
     
-     CustomButtomAuth(textbuttom: "Save",onPressed: (){
+     CustomButtomAuth(textbuttom: "حفظ",onPressed: (){
       controller.goToSuccessResetPassword();
      },),
     const SizedBox(height: 30,),

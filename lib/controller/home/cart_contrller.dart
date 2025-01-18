@@ -12,8 +12,7 @@ class CartContrllerImp extends CartContrller{
 List<Widget> page=[
   const AboutAs(),
   const Boistview(),
-  const Activity()
-
+ 
 ];
 List datacart=[
   {"icon":Icons.group,
@@ -22,11 +21,13 @@ List datacart=[
   {"icon":Icons.monetization_on,
   "title":"نقاطي"},
   
-  {"icon":Icons.article,
-  "title":"رسالتنا"},
+  {"icon":Icons.poll,
+  "title":"استبيانات"},
   
-  {"icon":Icons.person,
-  "title":"من نحن"},
+  {"icon":Icons.volunteer_activism,
+  "title":"ادعمنا",},
+   {"icon":Icons.lightbulb,
+  "title":"اقترح نشاط"},
 
 ];
 @override
