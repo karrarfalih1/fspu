@@ -19,4 +19,7 @@ static const String Logo="assets/images/logoauth2.png";
                  
   
  static const String wimanuser="assets/images/wimanuser2.png";
+ /////////////osara//////////
+ 
+ static const String osara1="assets/images/osara1.png";
 }

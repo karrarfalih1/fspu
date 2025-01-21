@@ -8,16 +8,12 @@ class Webviewtest extends GetView<HomeControllerImp>{
   Widget build(BuildContext context) {
     
    return Scaffold(
+    appBar: AppBar(title: Text("FSPU"),centerTitle: true,),
 
-    body:Column(children: [
-      SizedBox(height: 100,),
-      Text("ddsdfsd"),
-      Container(child:   WebViewWidget(
+    body: Container(child:   WebViewWidget(
       controller:controller.controller_webview,
 
     ),)
-    
-    ],)
    );
   }
 

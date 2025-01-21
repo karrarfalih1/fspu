@@ -54,6 +54,10 @@ class SilderImageHome extends GetView<HomeControllerImp> {
           IconButton(onPressed:(){controller.scaffoldkey.currentState!.openDrawer();}, icon: const Icon(
 
             Icons.menu,size: 35,color:AppColor.fspucolor,)),
+         
+             IconButton(onPressed:(){}, icon: const Icon(
+
+            Icons.notifications_outlined,size: 35,color:AppColor.fspucolor,)),
             const Spacer(),
           InkWell(
           onTap: (){

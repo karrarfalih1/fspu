@@ -136,6 +136,7 @@ if(StatusRequest.success==statusRequest){
    data.addAll(response['data']);
    print("dataslier-----------------dataslier");
    print(data);
+     startAutoSlide();
   }else{
     statusRequest=StatusRequest.failure; }
 }
@@ -152,7 +153,7 @@ if(StatusRequest.success==statusRequestpoints){
   if(response['status']=='success'){
   
   mypoints.value= response['data']['users_points'];
-       startAutoSlide();
+     
   print("00000000000000pints");
    print(mypoints);
      print("00000000000000pints");
