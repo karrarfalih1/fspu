@@ -22,4 +22,8 @@ static const String Logo="assets/images/logoauth2.png";
  /////////////osara//////////
  
  static const String osara1="assets/images/osara1.png";
+ static const String mostanserea="assets/images/mostanserea.png";
+ 
+ static const String tekno="assets/images/tekno.png";
+
 }

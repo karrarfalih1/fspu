@@ -14,8 +14,9 @@ import 'package:fspu/data/datasource/fspudata/slider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 MyServices myservices=Get.find();
 abstract class HomeController extends  GetxController{
-  
+
 }
+
 class HomeControllerImp extends HomeController{
   GlobalKey<ScaffoldState>scaffoldkey=GlobalKey();
   Points points =Points(Get.find());
@@ -26,13 +27,6 @@ StatusRequest statusRequestpoints=StatusRequest.none;
 SliderData sliderData=SliderData(Get.find());
 //////////points///////////
 RxInt mypoints =0.obs;
-
-
-/////////////
-
-/////////webview///
-late final WebViewController controller_webview;
-////////
 
 
 
@@ -71,11 +65,7 @@ update();
 
   @override
   void onInit() {
-controller_webview=WebViewController()
-..loadRequest(
-Uri.parse('https://mohesr.gov.iq/ar/')
 
-);
     FirebaseMessaging.instance.getToken().then((value){
       print("111111111111111111token00000000000000000token");
       print("${myservices.sharedPreferences.getString("karrar")}");
@@ -91,7 +81,7 @@ Uri.parse('https://mohesr.gov.iq/ar/')
     super.onInit();
     
      getSlider();
-      print("========== GetCount==========");
+    print("========== GetCount==========");
       print(myservices.sharedPreferences.getString("id"));
        getPoints() ;
       

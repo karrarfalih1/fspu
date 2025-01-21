@@ -1,23 +1,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:fspu/core/constantk/color.dart';
-import 'package:fspu/core/constantk/imagesasset.dart';
-import 'package:fspu/core/constantk/routesname.dart';
-import 'package:fspu/view/screen/webviewtest.dart';
 import 'package:fspu/view/widiget/home/cart_home.dart';
 import 'package:fspu/view/widiget/home/drower_costam.dart';
+import 'package:fspu/view/widiget/home/webviewlist.dart';
 import 'package:get/get.dart';
 import 'package:fspu/controller/activity_controller.dart';
 import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/controller/university/university_controller.dart';
 import 'package:fspu/core/classk/handlingdataview.dart';
-import 'package:fspu/core/servicesk/services.dart';
-import 'package:fspu/view/widiget/appbar.dart';
 import 'package:fspu/view/widiget/home/card_home.dart';
 import 'package:fspu/view/widiget/home/mail_famel_costom.dart';
 import 'package:fspu/view/widiget/home/silder_image_home.dart';
 import 'package:fspu/view/widiget/home/unversity.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class homepage extends StatelessWidget {
   const homepage({super.key});
@@ -56,74 +51,12 @@ Get.put(GetUniversityControllerImp());
                       title: 'جدول الاعمال', subtitle: '${controllerA.fersttitle}', icons: Icons.date_range, trailtext: '${controllerA.datek}',),
                    )
                      ),),
-                     InkWell( child: CardHome(title: 'حجز القاعات ', subtitle: 'تتوفر قاعات  كبيرة للحجز', icons: Icons.domain
+                     const InkWell( child: CardHome(title: 'حجز القاعات ', subtitle: 'تتوفر قاعات  كبيرة للحجز', icons: Icons.domain
                      , trailtext: 'متوفر',)),
                    Container(
-                    padding: EdgeInsets.symmetric(vertical: 5,horizontal: 20),
-                    child: Text("المواقع الرسمية",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: AppColor.fspucolor),)),
-               Container(
-             //   color: Colors.amber,
-                height: 170,width: double.infinity,
-                child: ListView(
-                scrollDirection: Axis.horizontal,
-                  children: [
-                   Card(
-                    child: InkWell(
-                      onTap: (){
-                        Get.to(Webviewtest());
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(3),
-                                         //   color: Colors.red,
-                        width: 120,
-                        child: Column(children: [
-                          Image.asset(AppImagesasset.osara1,height: 90,),
-                           Text("وزارة التعليم العالي  والبحث العلمي",textAlign: TextAlign.center,) 
-                        ],),
-                      ),
-                    ),
-                  )   ,        Card(
-                    child: Container(
-                      padding: EdgeInsets.all(3),
-                   //   color: Colors.red,
-                      width: 120,
-                      child: Column(children: [
-                        Image.asset(AppImagesasset.osara1,height: 90,),
-                         Text("وزارة التعليم العالي  والبحث العلمي",textAlign: TextAlign.center,) 
-                      ],),
-                    ),
-                  )   ,        Card(
-                    child: Container(
-                      padding: EdgeInsets.all(3),
-                   //   color: Colors.red,
-                      width: 120,
-                      child: Column(children: [
-                        Image.asset(AppImagesasset.osara1,height: 90,),
-                         Text("وزارة التعليم العالي  والبحث العلمي",textAlign: TextAlign.center,) 
-                      ],),
-                    ),
-                  )   ,        Card(
-                    child: Container(
-                      padding: EdgeInsets.all(3),
-                   //   color: Colors.red,
-                      width: 120,
-                      child: Column(children: [
-                        Image.asset(AppImagesasset.osara1,height: 90,),
-                         Text("وزارة التعليم العالي  والبحث العلمي",textAlign: TextAlign.center,) 
-                      ],),
-                    ),
-                  )   ,        Card(
-                    child: Container(
-                      padding: EdgeInsets.all(3),
-                   //   color: Colors.red,
-                      width: 120,
-                      child: Column(children: [
-                        Image.asset(AppImagesasset.osara1,height: 90,),
-                         Text("وزارة التعليم العالي  والبحث العلمي",textAlign: TextAlign.center,) 
-                      ],),
-                    ),
-                  )          ],),
-                ),
+                    padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20),
+                    child: const Text("المواقع الرسمية",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: AppColor.fspucolor),)),
+         Webviewlist(),
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 15),
                           child: const Text("الاحصائيات",
