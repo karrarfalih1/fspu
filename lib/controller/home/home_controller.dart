@@ -11,7 +11,6 @@ import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
 import 'package:fspu/core/localizationk/changelocal.dart';
 import 'package:fspu/core/servicesk/services.dart';
 import 'package:fspu/data/datasource/fspudata/slider.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 MyServices myservices=Get.find();
 abstract class HomeController extends  GetxController{
 
@@ -93,12 +92,12 @@ update();
   }
   
 /////////////////////////////////
-  void startAutoSlide(){
+  void startAutoSlide(){ 
     
     Timer.periodic(const Duration(seconds: 10), (timer){
       if(currenPage.value<2){
         currenPage.value++;
-      }else{
+      }else{ 
         currenPage.value=0;
       }
       pageController.animateToPage(
@@ -113,7 +112,7 @@ update();
     super.onClose();
     
     pageController.dispose();
-    // TODO: implement onClose
+
   }
 ///////////////////////////////////////
     getSlider() async{
@@ -124,8 +123,7 @@ update();
 if(StatusRequest.success==statusRequest){
   if(response['status']=='success'){
    data.addAll(response['data']);
-   print("dataslier-----------------dataslier");
-   print(data);
+  
      startAutoSlide();
   }else{
     statusRequest=StatusRequest.failure; }

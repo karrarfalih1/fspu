@@ -14,17 +14,17 @@ class ActivityData{
 
   return response.fold((l)=>l,(r)=>r);
   }
-  activity_delet(participate_activity_id,userid)async{
+  activity_delet(participateActivityId,userid)async{
     var response=await crud.postData(Applink.activity_delet, {
-     "participate_activity_id":participate_activity_id,
+     "participate_activity_id":participateActivityId,
      "participate_users_id":userid
     });
 
   return response.fold((l)=>l,(r)=>r);
   }
-   activity_add(participate_activity_id,userid)async{
+   activity_add(participateActivityId,userid)async{
     var response=await crud.postData(Applink.activity_add, {
-     "participate_activity_id":participate_activity_id,
+     "participate_activity_id":participateActivityId,
      "participate_users_id":userid
     });
 

@@ -16,7 +16,7 @@ class SilderImageHome extends GetView<HomeControllerImp> {
     Stack(
     children: [
      
-      Container( 
+      SizedBox( 
       
         
          height: 260,
@@ -43,7 +43,7 @@ class SilderImageHome extends GetView<HomeControllerImp> {
                               },
                             ),      )
                           ),
-                           Positioned(child: Container(
+                           Positioned(child: SizedBox(
         width: Get.width,
         height: 50,
        // color: Colors.amber,

@@ -1,4 +1,5 @@
 
+import 'package:fspu/view/screen/room.dart';
 import 'package:get/get.dart';
 import 'package:fspu/core/constantk/routesname.dart';
 import 'package:fspu/core/middleware/mymiddleware.dart';
@@ -40,7 +41,7 @@ List<GetPage<dynamic>>? routes=[
  GetPage(name: Approute.screenSingup, page: ()=> const SingupScreen()),
  
  GetPage(name: Approute.activity, page: ()=> const Activity()),
-
+GetPage(name: Approute.roomView, page:()=> RoomView())
 
 
 ];

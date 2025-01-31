@@ -8,9 +8,11 @@ import 'package:get/get_core/src/get_main.dart';
 
 class Webviewlist extends StatelessWidget{
   WebViewControllerImp controller =Get.put(WebViewControllerImp());
+
+  Webviewlist({super.key});
   @override
   Widget build(BuildContext context) {
-   return       Container(
+   return       SizedBox(
              //   color: Colors.amber,
                 height: 170,width: double.infinity,
                 child: ListView.builder(

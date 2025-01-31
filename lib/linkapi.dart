@@ -51,5 +51,7 @@ static const pluspoints ="$server/plus_points.php";
 static const getpoints ="$server/home/getpoints.php";
 
 static const getwining ="$server/gewining.php";
+//hall
 
+static const hallview ="$server/hall/viewhall.php";
 }

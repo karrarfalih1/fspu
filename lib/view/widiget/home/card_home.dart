@@ -19,7 +19,7 @@ class CardHome extends StatelessWidget {
                             child:  Card(
                               child: ListTile(
       
-                                trailing:Text(trailtext,style: TextStyle(color: AppColor.fspucolortwo,)),
+                                trailing:Text(trailtext,style: const TextStyle(color: AppColor.fspucolortwo,)),
                                 subtitle: Text(
                                   subtitle,
                                   style:const TextStyle(

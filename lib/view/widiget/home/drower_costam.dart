@@ -96,7 +96,7 @@ const SizedBox(height: 20,),
   SizedBox(width: 10,),
   DartLighMode()],)     
 ,
-SizedBox(height: 300,),
+const SizedBox(height: 300,),
 InkWell(
   onTap: () {
      Get.defaultDialog(

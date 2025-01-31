@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fspu/core/constantk/color.dart';
+import 'package:fspu/core/constantk/routesname.dart';
 import 'package:fspu/view/widiget/home/cart_home.dart';
 import 'package:fspu/view/widiget/home/drower_costam.dart';
 import 'package:fspu/view/widiget/home/webviewlist.dart';
@@ -45,13 +46,17 @@ Get.put(GetUniversityControllerImp());
                        
                         const SilderImageHome(),
                   const CartHome(),
-                Container(height: 100,
+                SizedBox(height: 100,
                 child:     GetBuilder<ActivityControllerImp>(builder:(controllerA)=>
                      HandlingDataView(statusRequest: controllerA.statusRequest, widget: CardHome(ontap: controller.gotoactivity, 
                       title: 'جدول الاعمال', subtitle: '${controllerA.fersttitle}', icons: Icons.date_range, trailtext: '${controllerA.datek}',),
                    )
                      ),),
-                     const InkWell( child: CardHome(title: 'حجز القاعات ', subtitle: 'تتوفر قاعات  كبيرة للحجز', icons: Icons.domain
+                      InkWell(
+                      onTap: (){
+Get.toNamed(Approute.roomView);
+                      },
+                       child:const CardHome(title: 'حجز القاعات ', subtitle: 'تتوفر قاعات  كبيرة للحجز', icons: Icons.domain
                      , trailtext: 'متوفر',)),
                    Container(
                     padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20),

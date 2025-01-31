@@ -57,7 +57,7 @@ stepContinue(){
   }else{
    
        if(currentStep==0){
-      print("here");
+      
     controllerSignup.checkformstat();
      if(controllerSignup.stateform==1){
       if(controllerSignup.selectedGender=='51'){
@@ -67,7 +67,7 @@ stepContinue(){
     );
       }else{
  currentStep =currentStep+1;
-      }}else{ 
+      }}else{  
  update();  
     }
     }else

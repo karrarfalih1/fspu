@@ -14,4 +14,5 @@ class Approute{
           static const String homepage="/homepage";
            static const String screenSingup="/screenSingup";
                static const String activity="/activity";
+               static const String roomView="/roomView";
 }

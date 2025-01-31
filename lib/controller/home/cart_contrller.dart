@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:fspu/view/screen/activity/activity.dart';
 import 'package:fspu/view/screen/cart/about_as.dart';
 import 'package:fspu/view/screen/cart/boist.dart';
 import 'package:get/get.dart';

@@ -6,11 +6,13 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class Webviewtest extends StatelessWidget{
   WebViewControllerImp controller =Get.put(WebViewControllerImp());
+
+  Webviewtest({super.key});
   @override
   Widget build(BuildContext context) {
     
    return Scaffold(
-    appBar: AppBar(title: Text("FSPU"),centerTitle: true,),
+    appBar: AppBar(title: const Text("FSPU"),centerTitle: true,),
 
     body: Container(child:   WebViewWidget(
       controller:controller.controller_webview[controller.selet_webview!],
