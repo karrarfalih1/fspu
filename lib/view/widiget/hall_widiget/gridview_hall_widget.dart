@@ -6,6 +6,7 @@ import 'package:fspu/core/constantk/color.dart';
 import 'package:get/get.dart';
 
 class GridviewHallWidget extends GetView<HallControllerImp>{
+  const GridviewHallWidget({super.key});
   @override
   Widget build(BuildContext context) {
    return GridView.builder(
@@ -30,7 +31,9 @@ class GridviewHallWidget extends GetView<HallControllerImp>{
       height: 30,
       child: GetBuilder<HallControllerImp>(builder:(controller)=>
         HandlingDataView(statusRequest:controller.statusRequest,
-         widget: controller.myhalldata.isNotEmpty?   Center(child:Text("${controller.myhalldata[0]['${controller.detels[index]['namehall']}']}",style: const TextStyle(fontWeight: FontWeight.bold,),)):Text("0")
+         widget: controller.myhalldata.isNotEmpty?   Center(
+          // ignore: prefer_const_constructors
+          child:Text("${controller.myhalldata[0]['${controller.detels[index]['namehall']}']}",style: const TextStyle(fontWeight: FontWeight.bold,),)):Text("0")
          )
       )
       

@@ -44,7 +44,7 @@ class MapControllerImp extends MapController {
                   titlelocation!,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 15,
                       color: Colors.white),
                 ),
               ),
@@ -59,7 +59,7 @@ class MapControllerImp extends MapController {
                   mapType: MapType.normal,
                   initialCameraPosition: _kGooglePlex,
                   onMapCreated: (GoogleMapController mapcontroller) async {
-                    controllerr = await mapcontroller;
+                    controllerr =  mapcontroller;
                     controllerr!.animateCamera(
                         CameraUpdate.newLatLng(LatLng(lang!, lat!)));
                     //       _controller.complete(controller);
