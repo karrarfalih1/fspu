@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:fspu/controller/home/hall_controller.dart';
+import 'package:fspu/controller/map_controller.dart';
 import 'package:fspu/core/constantk/color.dart';
 import 'package:fspu/linkapi.dart';
 import 'package:fspu/view/widiget/hall_widiget/description_hall_widget.dart';
@@ -7,13 +10,16 @@ import 'package:fspu/view/widiget/hall_widiget/gridview_hall_widget.dart';
 import 'package:fspu/view/widiget/hall_widiget/prichat_widget.dart';
 import 'package:fspu/view/widiget/titlerighit.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 
 class RoomView extends StatelessWidget {
   const RoomView({super.key});
 
   @override
   Widget build(Object context) {
-    Get.put(HallControllerImp());
+   HallControllerImp controller= Get.put(HallControllerImp());
+    MapControllerImp controllermap=Get.put(MapControllerImp());
     return Scaffold(
       body: ListView(
         children: [
@@ -39,17 +45,26 @@ class RoomView extends StatelessWidget {
           const Divider(
             endIndent: 150,
           ),
-          const Card(
-            child: ListTile(
-              leading: Icon(Icons.location_on),
-              title: Text("الموقع"),
-              subtitle: Text("بغداد /الكرادة/قرب جامع الابرار"),
-              trailing: Text(
-                "اظهر على الخريطة",
-                style: TextStyle(color: AppColor.fspucolor),
+           InkWell(
+            onTap: (){
+                controllermap.titlelocation="بغداد / العامرية";
+                controllermap.lang=controller.myhalldata.isNotEmpty?double.parse(controller.myhalldata[0]['hall_langtude']) :33.2;
+                  controllermap.lat=controller.myhalldata.isNotEmpty?double.parse(controller.myhalldata[0]['hall_latitude']):33.2;       
+                controllermap.showmap();
+            },
+             child: const Card(
+              child: ListTile(
+                leading: Icon(Icons.location_on),
+                title: Text("الموقع"),
+                subtitle: Text("بغداد /الكرادة/قرب جامع الابرار"),
+                trailing: Text(
+                    "اظهر على الخريطة",
+                    style: TextStyle(color: AppColor.fspucolor),
+                  ),
+                
               ),
-            ),
-          ),
+                       ),
+           ),
           const Titlerighit(title: "المواصفات"),
           GridviewHallWidget(),
           const Titlerighit(
@@ -76,6 +91,7 @@ class RoomView extends StatelessWidget {
               )
             ],
           )),
+      
           const SizedBox(
             height: 100,
           )
@@ -84,4 +100,5 @@ class RoomView extends StatelessWidget {
     );
   }
 }
+
  
