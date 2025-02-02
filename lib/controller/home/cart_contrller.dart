@@ -11,6 +11,9 @@ class CartContrllerImp extends CartContrller{
 List<Widget> page=[
   const AboutAs(),
   const Boistview(),
+   const Boistview(),
+    const Boistview(),
+     const Boistview(),
  
 ];
 List datacart=[

@@ -1,4 +1,5 @@
 
+import 'package:fspu/view/screen/logo_meaning.dart';
 import 'package:fspu/view/screen/room.dart';
 import 'package:get/get.dart';
 import 'package:fspu/core/constantk/routesname.dart';
@@ -41,8 +42,8 @@ List<GetPage<dynamic>>? routes=[
  GetPage(name: Approute.screenSingup, page: ()=> const SingupScreen()),
  
  GetPage(name: Approute.activity, page: ()=> const Activity()),
-GetPage(name: Approute.roomView, page:()=> RoomView())
-
+GetPage(name: Approute.roomView, page:()=>const RoomView()),
+GetPage(name: Approute.logoMeaning, page:()=> LogoMeaning())
 
 ];
 

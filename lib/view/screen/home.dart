@@ -39,7 +39,7 @@ Get.put(GetUniversityControllerImp());
               builder: (controller) =>
                   //  HandlingDataView(statusRequest:controller.statusRequest, widget:
 
-                  Container(
+                  SizedBox(
                     //  padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: ListView(
                       children: [

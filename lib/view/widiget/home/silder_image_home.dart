@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fspu/core/classk/handlingdataview.dart';
 import 'package:fspu/core/constantk/color.dart';
 import 'package:fspu/core/constantk/imagesasset.dart';
+import 'package:fspu/core/constantk/routesname.dart';
 import 'package:get/get.dart';
 import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/linkapi.dart';
@@ -59,11 +60,14 @@ class SilderImageHome extends GetView<HomeControllerImp> {
 
             Icons.notifications_outlined,size: 35,color:AppColor.fspucolor,)),
             const Spacer(),
-          InkWell(
-          onTap: (){
-
-          },
-          child: Image.asset(AppImagesasset.fspulogo1)),
+          Container(
+        height: 42,
+          child: InkWell(
+            onTap: (){
+              Get.toNamed(Approute.logoMeaning);
+            },
+            child:Hero(tag: "1", child:  Image.asset(AppImagesasset.fspulogo1))
+            )),
        ],),
           
       )),
