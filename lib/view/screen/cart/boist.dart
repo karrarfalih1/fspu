@@ -17,7 +17,6 @@ class Boistview extends StatelessWidget{
    return  Scaffold(
      appBar: AppBar(
       
-     
         centerTitle: true,
        backgroundColor: AppColor.fspucolor,
         title: Text("نظام النقاط",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color:Colors.white),),

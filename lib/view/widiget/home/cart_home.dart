@@ -26,14 +26,12 @@ class CartHome extends GetView<CartContrllerImp>{
                                     width: 80,
                                     child: InkWell(
                                       onTap: (){
-                                        if(index>1){
-                                          Get.defaultDialog(
-                                            title: "تنبيه ",
-                                            middleText: "لم يكتمل"
-                                          );
-                                        }else{
-                                           controller.chosecart(index);
-                                        }
+                            
+controller.chosecart(index);
+                                        
+                                       
+                                           
+                                        
                                   
                                         
                                       },

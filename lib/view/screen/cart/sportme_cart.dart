@@ -12,16 +12,23 @@ class SportmeCart extends StatelessWidget{
   
   length: 2,
   child: Scaffold(
-     appBar: AppBar(
-      
+        appBar: AppBar(
         //لجعلالعنوان في المنتصف
         centerTitle: true,
-       backgroundColor: AppColor.fspucolor,
-        title: Text("من نحن",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color:Colors.white),),
-        bottom: const TabBar(tabs: [
-          Icon(Icons.man),
-            Icon(Icons.female)
-        ]),),
+        backgroundColor: AppColor.fspucolortwo,
+        title: Text(
+          "ادعمنا",
+              style: Theme.of(context)
+              .textTheme
+              .headlineSmall!
+              .copyWith(color: Colors.white),
+        ),
+      ),
+     body: ListView(children:const [
+      SizedBox(height: 10,),
+    
+
+     ],),
  
     
   ),

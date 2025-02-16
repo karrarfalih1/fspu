@@ -133,7 +133,7 @@ SizedBox(
 
 
     controller.selectedGender= index.toString();
-    print(controller.selectedGender);
+  
   },
   popupProps: const PopupProps.menu(
     menuProps: MenuProps(

@@ -51,7 +51,10 @@ GlobalKey<FormState> formstateSignUp=GlobalKey<FormState>();
 //لجلب المعلومات
 //الكيت داتا ترجعلنا اما خطا معين اما المصفوفة الي بيها البيانات
     var response=await signUpData.postdata(
-      username_controller.text,email_controller.text,phone_controller.text,password_controller.text,
+      username_controller.text,
+      email_controller.text,
+      phone_controller.text,
+      password_controller.text,
       selectedGender,age_controller.text,select_un,
     );
 statusRequest=handleingData(response);

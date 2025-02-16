@@ -1,22 +1,16 @@
 //لتغيير اللغات 
-
 //راح نخلي التطبيق يفتح بلغة الجهاز واذا راد يغير اللغه يكدر يغيرها من مكان محدد\
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/core/constantk/apptheme.dart';
 import 'package:fspu/core/servicesk/services.dart';
-
 class LocaleController extends GetxController{
-
 Locale? mylang;
+
 MyServices myServices=Get.find();
-ThemeData appTheme=darkthem;
-
-
-
+      ThemeData appTheme=darkthem;
+      
 changeTheme(bool dartthembool){
   if(dartthembool==true){
     appTheme=darkthem;

@@ -4,6 +4,7 @@ import 'package:fspu/core/constantk/imagesasset.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fspu/view/widiget/titlerighit.dart';
 class LogoMeaning extends StatelessWidget {
+  const LogoMeaning({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(

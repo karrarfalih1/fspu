@@ -36,6 +36,8 @@ class Applink {
   static const activity_delet = "$server/activity/delet.php";
 
   static const activity_add = "$server/activity/add.php";
+ 
+    static const activityAddNewActivity = "$server/activity/addnewactivity.php";
 ////////////////points/////////////
   static const pluspoints = "$server/plus_points.php";
 

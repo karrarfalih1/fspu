@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fspu/core/constantk/color.dart';
 class Customtextfeld extends StatelessWidget {
+  
   final String hintText;
   final String labeltext;
   final  IconData  iconss;
@@ -11,6 +12,8 @@ class Customtextfeld extends StatelessWidget {
   final  TextEditingController? mycontroller;
   final void Function()? onPressedk;
   final String? Function(String?)? valid;
+
+
   const Customtextfeld({
     this.obscureText=false,
     super.key,

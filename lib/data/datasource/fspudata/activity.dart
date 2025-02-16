@@ -30,5 +30,21 @@ class ActivityData{
 
   return response.fold((l)=>l,(r)=>r);
   }
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   activityAddNewActivity(userid,activity_title,activity_disc,activity_date,activity_location,activity_activ,activity_langtude,activity_latitude,activity_grob)async{
+    var response=await crud.postData(Applink.activityAddNewActivity, {
+    "usersid":userid,
+    "activity_title":activity_title,
+    "activity_d":activity_disc,
+    "activity_date":activity_date,
+    "activity_location":activity_location,
+    "activity_activ":activity_activ,
+    "activity_langtude":activity_langtude,
+    "activity_latitude":activity_latitude,
+    "activity_grob":activity_grob
+    });
+
+  return response.fold((l)=>l,(r)=>r);
+  }
 
 }

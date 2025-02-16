@@ -10,9 +10,6 @@ import 'package:get/get.dart';
 
 class DrowerCostam extends GetView<HomeControllerImp>{
   const DrowerCostam({super.key});
-
- 
-
   @override
   Widget build(BuildContext context) {
     
@@ -119,6 +116,6 @@ InkWell(
 ),
 
               ],
-            );
+              );
            
-            }}
+              }}
