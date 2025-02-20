@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fspu/core/constantk/color.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 abstract class MapController extends GetxController {}
 
@@ -21,6 +22,12 @@ class MapControllerImp extends MapController {
     zoom: 12.4746,
   );
   GoogleMapController? controllerr;
+
+
+
+
+
+
   showmap(lat,lang,titlelocation) {
     // ignore: prefer_const_constructors
     marker.add(Marker(markerId: MarkerId('1'), position: LatLng(lang!, lat!)));

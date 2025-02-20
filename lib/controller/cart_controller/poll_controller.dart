@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fspu/core/classk/statusRequest.dart';
+import 'package:fspu/core/constantk/color.dart';
 import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
+import 'package:fspu/core/servicesk/services.dart';
 import 'package:fspu/data/datasource/fspudata/poll.dart';
 import 'package:get/get.dart';
 
 class PollController extends GetxController {}
 
 class PollControllerImp extends PollController {
+ MyServices myServices=Get.find();
   List myshose = ["0", "0", "0", "0"];
   int check = 0;
   Polldata polldata = Polldata(Get.find());
@@ -31,12 +34,14 @@ class PollControllerImp extends PollController {
   getpollview() async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await polldata.getdata();
+    var response = await polldata.getdata(
+      myServices.sharedPreferences.getString("id")
+    );
     statusRequest = handleingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == 'success') {
         data.addAll(response['data']);
-        print(data);
+     
       } else {
         statusRequest = StatusRequest.failure;
       }
@@ -58,16 +63,23 @@ class PollControllerImp extends PollController {
     }
 
     sendselctpoll();
+    Get.back();
   }
 
   sendselctpoll() async {
     statusRequestselct = StatusRequest.loading;
     update();
     var response = await polldata.slectpoll(myshose[0].toString(),
-        myshose[1].toString(), myshose[2].toString(), myshose[3].toString());
+        myshose[1].toString(), myshose[2].toString(), myshose[3].toString(),myServices.sharedPreferences.getString("id"));
     statusRequestselct = handleingData(response);
     if (StatusRequest.success == statusRequestselct) {
       if (response['status'] == 'success') {
+              Get.rawSnackbar(
+            snackPosition: SnackPosition.TOP,
+            backgroundColor: AppColor.fspucolortwo,
+            animationDuration: const Duration(seconds: 2),
+            title: "نجاح",
+            messageText: const Text("تم اضافة  الاستبيان  بنجاح"));
       } else {
         statusRequestselct = StatusRequest.failure;
       }

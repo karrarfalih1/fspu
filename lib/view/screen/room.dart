@@ -11,7 +11,6 @@ import 'package:fspu/view/widiget/hall_widiget/listdate_hall_widget.dart';
 import 'package:fspu/view/widiget/hall_widiget/prichat_widget.dart';
 import 'package:fspu/view/widiget/titlerighit.dart';
 import 'package:get/get.dart';
-
 class RoomView extends StatelessWidget {
   const RoomView({super.key});
 
@@ -33,13 +32,7 @@ Get.put(HallControllerImp());
           ),
           InkWell(
             onTap: () {
-             // controllermap.titlelocation =controller.myhalldata.isNotEmpty?controller.myhalldata[0]['hall_location']:" ";
-            ////  controllermap.lang = controller.myhalldata.isNotEmpty
-            //      ? double.parse(controller.myhalldata[0]['hall_langtude'])
-           //       : 33.2;
-           ////   controllermap.lat = controller.myhalldata.isNotEmpty
-               //   ? double.parse(controller.myhalldata[0]['hall_latitude'])
-            //      : 33.2;
+            
               controllermap.showmap( double.parse(controller.myhalldata[0]['hall_latitude']), double.parse(controller.myhalldata[0]['hall_langtude'])
           ,   controller.myhalldata[0]['hall_location'] );
             },
@@ -51,6 +44,23 @@ Get.put(HallControllerImp());
                 trailing: const Text(
                   "اظهر على الخريطة",
                   style:  TextStyle(color: AppColor.fspucolor),
+                ),
+              ),
+            ),
+          ),
+                 InkWell(
+            onTap: () {
+             controller.makePhoneCall('${controller.myhalldata.isNotEmpty?controller.myhalldata[0]["hall_phone"]:""}');
+           
+            },
+            child:  const Card(
+              child: ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("احجز الان"),
+                subtitle:Text( "اضغط هنا للاتصال والحجز المباشر",style: TextStyle(fontSize: 13),),
+                trailing:  Text(
+                "07xxxxxxx",
+                  style:TextStyle(color: AppColor.fspucolor),
                 ),
               ),
             ),

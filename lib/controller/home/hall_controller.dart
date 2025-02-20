@@ -3,6 +3,7 @@ import 'package:fspu/core/classk/statusRequest.dart';
 import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
 import 'package:fspu/data/datasource/fspudata/halldata.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 abstract class HallController extends GetxController {}
 
@@ -39,7 +40,15 @@ List hallreservationlist=[];
 
     super.onInit();
   }
+Future<void> makePhoneCall(String phoneNumber) async {
+  final Uri url = Uri.parse('tel:$phoneNumber');
 
+  try {
+    await launchUrl(url, mode: LaunchMode.externalApplication);
+  } catch (e) {
+    print('❌ خطأ أثناء محاولة فتح تطبيق الاتصال: $e');
+  }
+}
   gethalldetels() async {
     statusRequest = StatusRequest.loading;
     update();

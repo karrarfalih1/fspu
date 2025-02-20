@@ -29,7 +29,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
     
          
          width: double.infinity,
-      height: 500,
+      height: 530,
       child: Card(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +97,13 @@ class BostActivity extends GetView<ActivityControllerImp> {
                         color: AppColor.fspucolor,
                        ),),
                    ),
-                     SizedBox(
+                   ListTile(
+                        title: const Text("الجهة المنفذة",style: TextStyle(fontWeight: FontWeight.bold)),
+                        subtitle: Text("${activityModel.activityGrob}"),
+                        leading: const Icon(Icons.business,
+                        color: AppColor.fspucolor,
+                       ),),
+                /*     SizedBox(
                       height: 50,
                     //  color: Colors.red,
                       width: double.infinity,
@@ -151,7 +157,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
                                   
                                  ),
                        ],),
-                     ),
+                     ),*/
                      const Spacer(),
                      InkWell(
                       onTap: (){

@@ -9,11 +9,10 @@ class Activity extends StatelessWidget{
   const Activity({super.key});
 
   @override
-  Widget build(BuildContext context) {
+    Widget build(BuildContext context) {
     ActivityControllerImp controller=Get.put(ActivityControllerImp());
-return SafeArea(child: Scaffold(
-  
-  appBar : AppBar(
+    return SafeArea(child: Scaffold(
+    appBar : AppBar(
         //لجعلالعنوان في المنتصف
         centerTitle: true,
        backgroundColor: AppColor.fspucolor,
@@ -28,7 +27,7 @@ body: Container(
         child: Divider(
           endIndent: 50,
           indent: 50,
-        //  color: AppColor.fspucolor,
+     
         ),
       );
      },

@@ -7,13 +7,16 @@ class Polldata{
 
   Polldata(this.crud);
 
-  getdata()async{
-    var response=await crud.postData(Applink.pollview, {});
+  getdata(usersid)async{
+    var response=await crud.postData(Applink.pollview, {
+      "users_id":usersid
+    });
   return response.fold((l)=>l,(r)=>r);
   }
 
- slectpoll(polldataview_1,polldataview_2,polldataview_3,polldataview_4)async{
+ slectpoll(polldataview_1,polldataview_2,polldataview_3,polldataview_4,usersid)async{
     var response=await crud.postData(Applink.slectpoll, {
+    "users_id":usersid,
     "polldataview_1":polldataview_1,
     "polldataview_2":polldataview_2,
     "polldataview_3":polldataview_3,
