@@ -21,7 +21,7 @@ class MapControllerImp extends MapController {
     zoom: 12.4746,
   );
   GoogleMapController? controllerr;
-  showmap() {
+  showmap(lat,lang,titlelocation) {
     // ignore: prefer_const_constructors
     marker.add(Marker(markerId: MarkerId('1'), position: LatLng(lang!, lat!)));
 

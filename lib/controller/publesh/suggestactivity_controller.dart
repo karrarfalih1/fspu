@@ -27,7 +27,9 @@ GlobalKey<FormState> formstateactivity=GlobalKey<FormState>();
     zoom: 12.4746,
   );
   GoogleMapController? controllerr;
-  ontapp(lat,lang){
+  ontapp(latk,langk){
+    lat=latk;
+    lang=langk;
    
     marker.add(Marker(markerId:const MarkerId('1'), position: LatLng(lat!,lang!)));
     update();
@@ -47,7 +49,7 @@ late TextEditingController activity_title;
 
 late TextEditingController activity_disc;
 late TextEditingController activity_location;
-late String activity_activ;
+late String activity_activ="0";
 late TextEditingController activity_grob;
 
 
@@ -104,7 +106,7 @@ datatime.toString(),
 activity_location.text,
     activity_activ,
      lang.toString(),
-  lat.toString()
+   lat.toString()
 ,
 activity_grob.text     );
     statusRequest = handleingData(response);

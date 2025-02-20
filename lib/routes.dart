@@ -1,6 +1,7 @@
 
 import 'package:fspu/view/screen/activity/suggestactivity.dart';
 import 'package:fspu/view/screen/cart/sportme_cart.dart';
+import 'package:fspu/view/screen/cart/support.dart';
 import 'package:fspu/view/screen/logo_meaning.dart';
 import 'package:fspu/view/screen/room.dart';
 import 'package:get/get.dart';
@@ -47,7 +48,7 @@ List<GetPage<dynamic>>? routes=[
 GetPage(name: Approute.roomView, page:()=>const RoomView()),
 GetPage(name: Approute.logoMeaning, page:()=>const LogoMeaning()),
 
-GetPage(name: Approute.sportmeCart, page:()=>const SportmeCart()),
+GetPage(name: Approute.sportmeCart, page:()=>const Supportview()),
 GetPage(name: Approute.suggestactivity, page:()=>const Suggestactivity())
 
 

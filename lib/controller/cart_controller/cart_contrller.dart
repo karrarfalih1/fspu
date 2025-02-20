@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:fspu/view/screen/cart/about_as.dart';
 import 'package:fspu/view/screen/cart/boist.dart';
-import 'package:fspu/view/screen/cart/sportme_cart.dart';
 import 'package:fspu/view/screen/activity/suggestactivity.dart';
+import 'package:fspu/view/screen/cart/poll.dart';
+import 'package:fspu/view/screen/cart/support.dart';
 import 'package:get/get.dart';
 
 abstract class CartContrller extends GetxController{
@@ -13,8 +14,8 @@ class CartContrllerImp extends CartContrller{
 List<Widget> page=[
   const AboutAs(),
   const Boistview(),
-   const Boistview(),
-   const SportmeCart(),
+   const Pollview(),
+   const Supportview(),
    
      const Suggestactivity(),
      

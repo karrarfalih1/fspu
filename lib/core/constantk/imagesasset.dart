@@ -25,5 +25,8 @@ static const String Logo="assets/images/logoauth2.png";
  static const String mostanserea="assets/images/mostanserea.png";
  
  static const String tekno="assets/images/tekno.png";
+  static const String supportRafedan="assets/images/rafden.png";
+  
+  static const String supportZaincash="assets/images/zaincash.png";
 
 }

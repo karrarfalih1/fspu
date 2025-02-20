@@ -33,14 +33,15 @@ Get.put(HallControllerImp());
           ),
           InkWell(
             onTap: () {
-              controllermap.titlelocation =controller.myhalldata.isNotEmpty?controller.myhalldata[0]['hall_location']:" ";
-              controllermap.lang = controller.myhalldata.isNotEmpty
-                  ? double.parse(controller.myhalldata[0]['hall_langtude'])
-                  : 33.2;
-              controllermap.lat = controller.myhalldata.isNotEmpty
-                  ? double.parse(controller.myhalldata[0]['hall_latitude'])
-                  : 33.2;
-              controllermap.showmap();
+             // controllermap.titlelocation =controller.myhalldata.isNotEmpty?controller.myhalldata[0]['hall_location']:" ";
+            ////  controllermap.lang = controller.myhalldata.isNotEmpty
+            //      ? double.parse(controller.myhalldata[0]['hall_langtude'])
+           //       : 33.2;
+           ////   controllermap.lat = controller.myhalldata.isNotEmpty
+               //   ? double.parse(controller.myhalldata[0]['hall_latitude'])
+            //      : 33.2;
+              controllermap.showmap( double.parse(controller.myhalldata[0]['hall_latitude']), double.parse(controller.myhalldata[0]['hall_langtude'])
+          ,   controller.myhalldata[0]['hall_location'] );
             },
             child:  Card(
               child: ListTile(

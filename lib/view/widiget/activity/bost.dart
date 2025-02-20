@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fspu/controller/map_controller.dart';
 import 'package:fspu/data/model/itemsmodel.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -11,6 +12,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
   BostActivity({super.key,required this.activityModel});
   @override
   Widget build(BuildContext context) {
+    MapControllerImp controllermap=Get.put(MapControllerImp());
     DateTime parsedDate=DateTime.parse(activityModel.activityDate.toString());
     DateTime currentDate=DateTime.now();
     DateTime justdatyfuter=DateTime(parsedDate.year,parsedDate.month,parsedDate.day);
@@ -79,12 +81,22 @@ class BostActivity extends GetView<ActivityControllerImp> {
                       child: const Text("نشط الان",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),)):
                     Text("باقي $remainigDays يوم",style: const TextStyle(fontWeight: FontWeight.bold)),
                      ),),
-                   ListTile(
-                      title: const Text("الموقع",style: TextStyle(fontWeight: FontWeight.bold)),
-                      subtitle: Text("${activityModel.activityLocation}"),
-                      leading: const Icon(Icons.location_on,
-                      color: AppColor.fspucolor,
-                     ),),
+                   InkWell(onTap: (){
+       
+                    controllermap.showmap(
+                         double.parse(activityModel.activityLangtude!),
+                       double.parse(activityModel.activityLatitude!)
+                     
+                      ,activityModel.activityLocation);
+                   },
+                     child: ListTile(
+                      trailing:const Text("اضهر على الخريطة",style: TextStyle(color: AppColor.fspucolor),),
+                        title: const Text("الموقع",style: TextStyle(fontWeight: FontWeight.bold)),
+                        subtitle: Text("${activityModel.activityLocation}"),
+                        leading: const Icon(Icons.location_on,
+                        color: AppColor.fspucolor,
+                       ),),
+                   ),
                      SizedBox(
                       height: 50,
                     //  color: Colors.red,

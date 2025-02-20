@@ -5,7 +5,6 @@ import 'package:fspu/core/constantk/color.dart';
 import 'package:fspu/view/widiget/activity/datepublishactivity.dart';
 import 'package:fspu/view/widiget/activity/publishactivity.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 class Suggestactivity extends StatelessWidget {
   const Suggestactivity({super.key});

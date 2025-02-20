@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fspu/controller/home/cart_contrller.dart';
+import 'package:fspu/controller/cart_controller/cart_contrller.dart';
 import 'package:fspu/core/constantk/color.dart';
 import 'package:get/get.dart';
 

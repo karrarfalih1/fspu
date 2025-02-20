@@ -49,4 +49,10 @@ class Applink {
   static const hallview = "$server/hall/viewhall.php";
   static const hallimage = "$server/hall/image.php";
   static const hallresrvation = "$server/hall/listdata.php";
+  /////////////////support///////////
+   static const support = "$server/support.php";
+   ////////////poll///////////////////////////
+    static const pollview = "$server/poll/pollview.php";
+    
+    static const slectpoll = "$server/poll/selectpoll.php";
 }
