@@ -28,7 +28,6 @@ class SingupScreen extends StatelessWidget{
                child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
-               
                    color: Colors.grey,
                   borderRadius: BorderRadius.circular(10)
                 ),

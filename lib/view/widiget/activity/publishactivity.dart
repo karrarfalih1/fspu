@@ -4,8 +4,9 @@ import 'package:get/get.dart';
 
 class Publishactivity extends GetView<SuggestactivityControllerImp>{
   final String? title;
+  final int lengthtext;
   final TextEditingController mycontroller;
-  const Publishactivity({super.key,required this.title,required this.mycontroller});
+  const Publishactivity({super.key,required this.title,required this.mycontroller,required this.lengthtext});
   @override
   Widget build(BuildContext context) {
     return    Card(
@@ -20,6 +21,8 @@ class Publishactivity extends GetView<SuggestactivityControllerImp>{
                         style: TextStyle(fontSize: 20),
                       ),
                       TextFormField(
+                        
+                        maxLength: lengthtext,
                         validator: (val){
                           if(val==""){ 
                             return "هذا الحقل لا يمكن ان يكون فارغ";

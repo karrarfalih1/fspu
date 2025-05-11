@@ -75,6 +75,7 @@ class ActivityControllerImp extends ActivityController {
             animationDuration: const Duration(seconds: 3),
             title: "نجاح",
             messageText: const Text("لقد تم حذف اسمك من النشاط بنجاح"));
+     
       } else {
         statusRequest = StatusRequest.failure;
       }

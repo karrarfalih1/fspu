@@ -14,6 +14,7 @@ abstract class SuggestactivityController extends GetxController{
 }
 
 class SuggestactivityControllerImp extends SuggestactivityController{
+      
   ActivityControllerImp controller =Get.find();
   
 GlobalKey<FormState> formstateactivity=GlobalKey<FormState>();

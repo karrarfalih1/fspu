@@ -17,8 +17,7 @@ import 'package:fspu/view/widiget/auth/textSignUp.dart';
 class SignUp extends StatelessWidget{
   const SignUp({super.key});
   @override
-  Widget build(BuildContext context) {
-    GetUniversityControllerImp controllerUniversty=Get.put(GetUniversityControllerImp());
+  Widget build(BuildContext context) {Get.put(GetUniversityControllerImp());
 
 //نحقن الكونترولر الخاص بها
  Get.lazyPut(()=>SignUp_ControllerImp());

@@ -1,6 +1,6 @@
 
+import 'package:fspu/adminview.dart';
 import 'package:fspu/view/screen/activity/suggestactivity.dart';
-import 'package:fspu/view/screen/cart/sportme_cart.dart';
 import 'package:fspu/view/screen/cart/support.dart';
 import 'package:fspu/view/screen/logo_meaning.dart';
 import 'package:fspu/view/screen/room.dart';
@@ -24,7 +24,7 @@ import 'package:fspu/view/screen/singup_screen.dart';
 List<GetPage<dynamic>>? routes=[
 
   //test
-  //GetPage(name: "/", page: ()=>const SignUp()),
+ // GetPage(name: "/", page: ()=> Adminview()),
   //Auth
       GetPage(name: "/", page: ()=>const SingupScreen(),middlewares: [ Mymiddleware() ]),
  // GetPage(name: "/", page: ()=> SingupScreen()),

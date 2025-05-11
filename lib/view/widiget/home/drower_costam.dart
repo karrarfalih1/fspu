@@ -18,7 +18,7 @@ class DrowerCostam extends GetView<HomeControllerImp>{
            return Column(
               children: [
                
-           SizedBox(
+           SizedBox( 
          //   width: 200,
             height: 150,
               child: GetBuilder<HomeControllerImp>(builder:(controller)=>

@@ -1,0 +1,44 @@
+
+import 'package:get/get.dart';
+import 'package:fspu/controller/home/home_controller.dart';
+import 'package:fspu/core/classk/statusRequest.dart';
+import 'package:fspu/core/functionsk/handlingdatacontroller.dart';
+import 'package:fspu/data/datasource/remote/notifay_data.dart';
+
+class NotificationController extends GetxController{
+
+StatusRequest statusRequest =StatusRequest.none;
+
+  NotifayData notifayData =  NotifayData(Get.find());
+  List data=[];
+    getdata()async{
+data.clear();
+    //نعطي قيمة ابتدائية وهي اللودنغ
+    statusRequest=StatusRequest.loading;
+    update();
+//لجلب المعلومات
+//الكيت داتا ترجعلنا اما خطا معين اما المصفوفة الي بيها البيانات
+    var response=await notifayData.getntefy(
+      myservices.sharedPreferences.getString("id")!
+    ); 
+
+    statusRequest=handleingData(response);
+
+//القيمة الفوك متوقع ترجعلي ثلالث اشياء  الاولى نجاح  والثانية خطا بالانترنيت والثالثة خطا بالاتصال
+if(StatusRequest.success==statusRequest){
+  if(response['status']=='success'){
+ // data.addAll(response['data']);
+  }else{
+    statusRequest=StatusRequest.failure;
+  }
+ 
+}
+update();
+  }
+  @override
+  void onInit() {
+     getdata();
+    super.onInit();
+
+  }
+}

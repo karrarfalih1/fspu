@@ -103,61 +103,7 @@ class BostActivity extends GetView<ActivityControllerImp> {
                         leading: const Icon(Icons.business,
                         color: AppColor.fspucolor,
                        ),),
-                /*     SizedBox(
-                      height: 50,
-                    //  color: Colors.red,
-                      width: double.infinity,
-                       child: Row(children: [
-                        InkWell(
-                          onTap: (){},
-                          child: Container(
-                               margin: const EdgeInsets.symmetric(horizontal: 20),
-                               
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            height: 40,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              color: AppColor.fspucolor1,
-                              borderRadius: BorderRadius.circular(10),
-                             
-                            ),
-                            
-                             child:const Center(child: Text("تفعيل الكود",style: TextStyle( color: Colors.black,fontWeight: FontWeight.bold),)))),
-                         //    Spacer(),
-                                 Container(
-                                  margin: const EdgeInsets.symmetric(horizontal: 10),
-                                  height: 40,
-                                  width: 100,
-                                   child:TextField(
-                                      
-                                      keyboardType:TextInputType.phone,
-                                           onChanged: (value) {
-                                             (() {
-                                              print(value);
-                                              // تحديث النص عند التغيير
-                                             });
-                                           },//textAlign: TextAlign.end,
-                                           
-                                           decoration: InputDecoration(
-                                            
-                                                hintText: "كود النشاط",
-                                          hintStyle: const TextStyle(fontSize: 14,),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(10),
-                                              borderSide: const BorderSide(color: AppColor.fspucolor)
-                                            ),
-                                         //   enabledBorder:InputBorder,
-                                             border: const OutlineInputBorder(borderSide:BorderSide(
-                                              
-                                              
-                                              color: AppColor.fspucolor)),
-                                             
-                                           ),
-                                         ),
-                                  
-                                 ),
-                       ],),
-                     ),*/
+           
                      const Spacer(),
                      InkWell(
                       onTap: (){
@@ -171,9 +117,10 @@ class BostActivity extends GetView<ActivityControllerImp> {
                             middleText: "هل انت متاكد من حذف اسمك من هذا النشاط؟",
                             actions: [
                               ElevatedButton(onPressed:(){
-  controller.setActivity(activityModel.activityId, 0);
-                    controller.deletactivity(activityModel.activityId.toString());
-                 Get.back();
+                                Get.back();
+                                controller.setActivity(activityModel.activityId, 0);
+                                controller.deletactivity(activityModel.activityId.toString());
+                    
                               }, child:const Text("نعم",)),
                              const SizedBox(width: 40,),
                                  ElevatedButton(onPressed:(){  Get.back();}, child:const Text("لا"))

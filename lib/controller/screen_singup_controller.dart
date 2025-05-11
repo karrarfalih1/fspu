@@ -27,15 +27,15 @@ int currentStep=0;
        height: 550,
         child:SignUp() ,) ),
      Step(
-       state: currentStep >1?StepState.complete:StepState.indexed,
-       isActive: currentStep >= 1,
-      title: const Text(
-      
-      "الجامعة",style: TextStyle(fontSize: 12)), content: const SizedBox(
-    width: double.infinity,
-    height: 600,
-    child: Choseunivesity(),
-      )),
+          state: currentStep >1?StepState.complete:StepState.indexed,
+          isActive: currentStep >= 1,
+          title: const Text(
+          "الجامعة",style: TextStyle(fontSize: 12)), content: const SizedBox(
+          width: double.infinity,
+          height: 600,
+          child: Choseunivesity(),
+          )
+      ),
       Step(
          state: currentStep >2?StepState.complete:StepState.indexed,
         

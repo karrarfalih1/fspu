@@ -1,6 +1,7 @@
 //لتغيير اللغات 
 //راح نخلي التطبيق يفتح بلغة الجهاز واذا راد يغير اللغه يكدر يغيرها من مكان محدد\
 import 'package:flutter/material.dart';
+import 'package:fspu/core/functionsk/fcmconfig.dart';
 import 'package:get/get.dart';
 import 'package:fspu/controller/home/home_controller.dart';
 import 'package:fspu/core/constantk/apptheme.dart';
@@ -32,6 +33,8 @@ changeLang(){
 }
 @override
   void onInit() {
+       requestPermissionNotification();
+    fcmconfig();
    String? themeshared=myServices.sharedPreferences.getString("them");
    if(themeshared=="dark"){
     changeTheme(true);

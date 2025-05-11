@@ -62,15 +62,19 @@ update();
  var currenPage=0.obs;
  @override
 
+
   @override
   void onInit() {
-
-    FirebaseMessaging.instance.getToken().then((value){
+FirebaseMessaging fir=FirebaseMessaging.instance;
+fir.subscribeToTopic("users");
+ /*   FirebaseMessaging.instance.getToken().then((value){
       print("111111111111111111token00000000000000000token");
       print("${myservices.sharedPreferences.getString("karrar")}");
       print(value);
       String? token=value;
-    });
+    }
+    
+    );*/
     if(myservices.sharedPreferences.getString("them")=="dark"){
       positive=true;
     }else{

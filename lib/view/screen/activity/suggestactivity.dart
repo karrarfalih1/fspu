@@ -31,14 +31,18 @@ class Suggestactivity extends StatelessWidget {
           child: ListView(
             children: [
            Publishactivity(
+            lengthtext: 50,
             title: "عنوان النشاط",
             mycontroller:controller.activity_title, ),
-           Publishactivity(title: "نبذة عن النشاط", mycontroller:  controller.activity_disc),
+           Publishactivity(lengthtext: 250,
+            title: "نبذة عن النشاط", mycontroller:  controller.activity_disc),
 
  const Datepublishactivity(),
 
 
-            Publishactivity(title: "الموقع ", mycontroller: controller.activity_location,),
+            Publishactivity(
+              lengthtext: 50,
+              title: "الموقع ", mycontroller: controller.activity_location,),
             GetBuilder<SuggestactivityControllerImp>(builder: (controller)=>
                   InkWell(
                 onTap: () {
@@ -81,7 +85,9 @@ class Suggestactivity extends StatelessWidget {
               ),
               )
            ,
-         Publishactivity(title: "الجهة المنفذة", mycontroller: controller.activity_grob,),
+         Publishactivity(
+          lengthtext: 50,
+          title: "الجهة المنفذة", mycontroller: controller.activity_grob,),
               InkWell(
                 onTap: () {
                   if(controller.formstateactivity.currentState!.validate() && controller.shoosmaplocation!){
