@@ -1,0 +1,2 @@
+C:/forall/fspu1/fspu/android/app/.cxx/RelWithDebInfo/4tf13e2j/x86_64/CMakeFiles/edit_cache.dir
+C:/forall/fspu1/fspu/android/app/.cxx/RelWithDebInfo/4tf13e2j/x86_64/CMakeFiles/rebuild_cache.dir

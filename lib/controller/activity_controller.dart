@@ -41,7 +41,10 @@ class ActivityControllerImp extends ActivityController {
 //لجلب المعلومات
 //الكيت داتا ترجعلنا اما خطا معين اما المصفوفة الي بيها البيانات
     var response = await activityData
-        .getdata(myservices.sharedPreferences.getString("id"));
+        .getdata(
+          myservices.sharedPreferences.getString("id")
+          
+          );
 
     statusRequest = handleingData(response);
 

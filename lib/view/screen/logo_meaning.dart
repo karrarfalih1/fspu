@@ -3,6 +3,7 @@ import 'package:fspu/core/constantk/color.dart';
 import 'package:fspu/core/constantk/imagesasset.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fspu/view/widiget/titlerighit.dart';
+import 'package:lottie/lottie.dart';
 class LogoMeaning extends StatelessWidget {
   const LogoMeaning({super.key});
   @override
@@ -34,44 +35,46 @@ class LogoMeaning extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Card(
+                   Card(
                       child: Container(
+                        width: 45,
                           margin: const EdgeInsets.all(4),
-                          child: const Icon(
-                            Icons.local_fire_department_outlined,
-                            size: 45,
-                            color: AppColor.fspucolortwo,
-                          ))),
+                          child:Lottie.asset(
+                           
+                            AppImagesasset.fire))),
                   const Icon(
                     Icons.add,
                     size: 20,color: AppColor.fspucolor,
-                  ),  Card(
+                  ),      Card(
                       child: Container(
+                        width: 45,
                           margin: const EdgeInsets.all(4),
-                          child: const Icon(
-                            Icons.menu_book_sharp,
-                            size: 45,
-                            color: AppColor.fspucolortwo,
-                          ))),
+                          child:Lottie.asset(
+                           
+                            AppImagesasset.book))),
                    const Icon(
                     Icons.add,
                     size: 20,color: AppColor.fspucolor,
                   ),
                   Card(
                       child: Container(
+                        width: 45,
                           margin: const EdgeInsets.all(4),
-                          child: const 
-Icon(FontAwesomeIcons.circle, size: 45, color: AppColor.fspucolortwo))),
+                          child:Lottie.asset(
+                           
+                            AppImagesasset.circle))),
            
                           const Icon(
                     Icons.add,
                     size: 20,color: AppColor.fspucolor,
                   ),
-                  Card(
+               Card(
                       child: Container(
+                        width: 45,
                           margin: const EdgeInsets.all(4),
-                          child: const 
-Icon(FontAwesomeIcons.hand, size: 45, color: AppColor.fspucolortwo))),      
+                          child:Lottie.asset(
+                           
+                            AppImagesasset.hand1))),      
                 ],
               ),
             ),

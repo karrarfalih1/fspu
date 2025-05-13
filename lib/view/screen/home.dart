@@ -49,13 +49,13 @@ Get.put(GetUniversityControllerImp());
                 SizedBox(height: 100,
                 child:     GetBuilder<ActivityControllerImp>(builder:(controllerA)=>
                      HandlingDataView(statusRequest: controllerA.statusRequest, widget: CardHome(ontap: controller.gotoactivity, 
-                      title: 'جدول الاعمال', subtitle: '${controllerA.fersttitle}', icons: Icons.date_range, trailtext: '${controllerA.datek}',),
-                   )
-                     ),),
-                      InkWell(
-                      onTap: (){
-Get.toNamed(Approute.roomView);
-                      },
+                       title: 'جدول الاعمال', subtitle: '${controllerA.fersttitle}', icons: Icons.date_range, trailtext: '${controllerA.datek}',),
+                       )
+                       ),),
+                       InkWell(
+                       onTap: (){
+                       Get.toNamed(Approute.roomView);
+                       },
                        child:const CardHome(title: 'حجز القاعات ', subtitle: 'تتوفر قاعات  كبيرة للحجز', icons: Icons.domain
                      , trailtext: 'متوفر',)),
                    Container(
